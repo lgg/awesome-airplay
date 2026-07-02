@@ -11,6 +11,8 @@ AirPlay is Apple's wireless media protocol family for audio, video, screen mirro
 - [Senders and Desktop Clients](#senders-and-desktop-clients)
 - [Android](#android)
 - [Bridges and Multiroom](#bridges-and-multiroom)
+- [Commercial Receivers](#commercial-receivers)
+- [Hardware and DIY](#hardware-and-diy)
 - [Linux Audio Stack](#linux-audio-stack)
 - [Libraries and Protocol Implementations](#libraries-and-protocol-implementations)
 - [Debugging and Discovery](#debugging-and-discovery)
@@ -33,6 +35,9 @@ AirPlay is Apple's wireless media protocol family for audio, video, screen mirro
 - [RPiPlay](https://github.com/FD-/RPiPlay) - AirPlay mirroring receiver originally optimized for Raspberry Pi hardware.
 - [java-airplay-server](https://github.com/serezhka/java-airplay-server) - Java AirPlay server that acts like an Apple TV for mirroring experiments.
 - [airplayreceiver](https://github.com/SteeBono/airplayreceiver) - C# implementation of AirPlay 2 mirroring and audio protocol for testing across Windows, macOS, and Linux.
+- [AirPlay-Windows](https://github.com/moieric11/AirPlay-Windows) - Native Windows AirPlay 2 receiver for mirroring and RAOP audio without Bonjour SDK or Apple runtime dependencies.
+- [UxPlay-NoBonjour](https://github.com/Kylepossible/uxplay-nobonjour) - Windows-focused UxPlay fork that replaces the Bonjour service dependency with an embedded mDNS responder.
+- [PiP](https://github.com/amitv87/PiP) - macOS picture-in-picture utility with AirPlay receiver support for multiple parallel sessions.
 
 ## Senders and Desktop Clients
 
@@ -47,6 +52,7 @@ AirPlay is Apple's wireless media protocol family for audio, video, screen mirro
 - [AirMusic](https://www.airmusic.app/portal/) - Android app for streaming audio from many apps to AirPlay, DLNA, Sonos, Google Cast, HEOS, Fire TV, Roku, and other receivers.
 - [AirScreen](https://www.airscreen.app/) - Android receiver app for AirPlay, Google Cast, Miracast, and DLNA, commonly used on Android TV boxes and Fire TV devices.
 - [AirPin PRO](https://play.google.com/store/apps/details?id=com.waxrain.airplaydmr3) - Android AirPlay and DLNA receiver for phones, tablets, TV boxes, and projectors.
+- [AirReceiver](https://play.google.com/store/apps/details?id=com.softmedia.receiver) - Android TV and Android box receiver for AirPlay, Google Cast, wireless display, and DLNA.
 - [AriaCast Receiver](https://www.music-assistant.io/plugins/ariacast-receiver/) - Music Assistant plugin for receiving high-quality audio streamed from Android devices over an AirPlay-like local path.
 
 ## Bridges and Multiroom
@@ -54,6 +60,18 @@ AirPlay is Apple's wireless media protocol family for audio, video, screen mirro
 - [AirConnect](https://github.com/philippe44/AirConnect) - Bridge that exposes UPnP, Sonos, and Chromecast players as virtual AirPlay devices.
 - [BabelPod](https://github.com/afaden/BabelPod) - Audio relay project for bridging AirPlay, Chromecast, Bluetooth, and local audio devices.
 - [AirSonos](https://github.com/stephen/airsonos) - Historical bridge that made Sonos speakers appear as AirPlay receivers.
+
+## Commercial Receivers
+
+- [AirServer](https://www.airserver.com/Overview) - Commercial receiver for AirPlay, Google Cast, and Miracast on Windows, macOS, Xbox, Surface Hub, and dedicated hardware.
+- [Reflector](https://www.airsquirrels.com/reflector) - Commercial AirPlay, Google Cast, and Miracast receiver for macOS and Windows with recording and multi-device mirroring.
+- [LonelyScreen](https://www.lonelyscreen.com/) - AirPlay receiver for Windows and macOS focused on iPhone and iPad screen mirroring.
+
+## Hardware and DIY
+
+- [rpi-audio-receiver](https://github.com/nicokaiser/rpi-audio-receiver) - Raspberry Pi audio receiver setup with AirPlay 2, Bluetooth A2DP, and Spotify Connect.
+- [airplay-esp32](https://github.com/rbouteiller/airplay-esp32) - ESP32 and ESP32-S3 AirPlay 2 audio receiver for building low-cost wireless speakers.
+- [raspi-play](https://github.com/N8WM/raspi-play) - Tutorial for building a compact Raspberry Pi Zero 2 W AirPlay 2 audio receiver.
 
 ## Linux Audio Stack
 
@@ -76,6 +94,7 @@ AirPlay is Apple's wireless media protocol family for audio, video, screen mirro
 - [Discovery](https://apps.apple.com/us/app/discovery-dns-sd-browser/id305441017) - iOS and macOS DNS-SD browser for inspecting AirPlay, RAOP, and companion services.
 - [Wireshark](https://www.wireshark.org/) - Packet analyzer for inspecting mDNS, RTSP, RTP, HTTP, and TLS traffic around AirPlay sessions.
 - [tcpdump](https://www.tcpdump.org/) - Command-line packet capture tool for recording AirPlay discovery and streaming traffic before deeper analysis.
+- [Auto Accept AirPlay Requests](https://github.com/duddu/auto-accept-airplay-requests) - macOS helper that automatically accepts AirPlay receiver prompts for trusted local setups.
 
 ## Security Research
 

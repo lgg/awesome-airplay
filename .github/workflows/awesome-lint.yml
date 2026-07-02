@@ -1,0 +1,18 @@
+name: Awesome Lint
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  awesome-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run awesome-lint
+        run: npx awesome-lint

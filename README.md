@@ -37,6 +37,7 @@ AirPlay is Apple's wireless media protocol family for audio, video, screen mirro
 - [airplayreceiver](https://github.com/SteeBono/airplayreceiver) - C# implementation of AirPlay 2 mirroring and audio protocol for testing across Windows, macOS, and Linux.
 - [AirPlay-Windows](https://github.com/moieric11/AirPlay-Windows) - Native Windows AirPlay 2 receiver for mirroring and RAOP audio without Bonjour SDK or Apple runtime dependencies.
 - [UxPlay-NoBonjour](https://github.com/Kylepossible/uxplay-nobonjour) - Windows-focused UxPlay fork that replaces the Bonjour service dependency with an embedded mDNS responder.
+- [AirGlass](https://github.com/jdkuk/AirGlass) - Open-source native C++ AirPlay receiver for Windows 10/11 with screen mirroring, lossless ALAC music playback, and a built-in mDNS responder instead of Bonjour; an optional paid key adds a floating window.
 - [PiP](https://github.com/amitv87/PiP) - macOS picture-in-picture utility with AirPlay receiver support for multiple parallel sessions.
 
 ## Senders and Desktop Clients

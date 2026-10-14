@@ -55,6 +55,7 @@ AirPlay is Apple's wireless media protocol family for audio, video, screen mirro
 - [AirPin PRO](https://play.google.com/store/apps/details?id=com.waxrain.airplaydmr3) - Android AirPlay and DLNA receiver for phones, tablets, TV boxes, and projectors.
 - [AirReceiver](https://play.google.com/store/apps/details?id=com.softmedia.receiver) - Android TV and Android box receiver for AirPlay, Google Cast, wireless display, and DLNA.
 - [AriaCast Receiver](https://www.music-assistant.io/plugins/ariacast-receiver/) - Music Assistant plugin for receiving high-quality audio streamed from Android devices over an AirPlay-like local path.
+- [ScreenDock](https://github.com/tarek369/screendock) - Open-source (GPLv3) AirPlay receiver for Android phones, tablets, and Android TV, built on UxPlay, with mirroring, audio, and HLS video.
 
 ## Bridges and Multiroom
 

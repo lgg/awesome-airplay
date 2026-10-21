@@ -28,6 +28,10 @@ Use the same inline-code labels and definitions as the [README](README.md#resour
 - `Free`: core functionality or the linked informational resource is freely available without payment.
 - `Freemium`: a meaningful free workflow is available, with optional paid features or usage limits.
 - `Paid`: meaningful ongoing use requires payment, even when a trial or preview is available.
+- `AirPlay 1` / `AirPlay 2`: the AirPlay protocol version(s) the project implements. Add only when documented by the project; omit rather than guess.
+- `Audio` / `Video`: whether the project sends or receives AirPlay audio, and screen mirroring or video streaming. Note in the description when only mirroring or only URL/HLS video is supported.
+
+Place protocol and media labels after the licensing and pricing labels, for example `Open Source` `Free` `AirPlay 2` `Audio` `Video`.
 
 For applications and services, assign one pricing label (`Free`, `Freemium`, or `Paid`) when it can be verified, plus `Open Source` only when license evidence supports it. An open-source project with optional paid unlocks can have both `Open Source` and `Freemium`. Paid hosted offerings do not automatically make the self-hosted open-source software paid.
 

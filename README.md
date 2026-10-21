@@ -59,6 +59,7 @@ Licensing, pricing, and availability may change. Self-hosting and hardware can e
 
 - [TuneBlade](https://www.tuneblade.com/) - `Freemium` — Windows tray utility for streaming system-wide audio to AirPlay receivers, including Apple TV, AirPort Express, AirPlay speakers, and Shairport-based receivers.
 - [AirSend](https://github.com/Pabldi08/AirSend) - `Open Source` `Free` — Open-source Windows to HomePod AirPlay 2 audio sender written with Rust and Tauri.
+- [WinPlay](https://github.com/dineshdhotrad/WinPlay) - `Open Source` `Free` — GPL-3.0 native Windows 10/11 AirPlay 2 sender. Audio: system audio as lossless ALAC over RAOP to AirPlay 2 receivers, including HomePod stereo pairs and PTP-synced multi-room groups. Video: H.264 screen mirroring to Apple TV (receivers such as HomePod are audio-only).
 - [pyatv](https://pyatv.dev/) - `Open Source` `Free` — Python library and CLI for discovering, controlling, and streaming to Apple TV, HomePod, AirPort Express, and AirPlay receivers.
 - [Airfoil](https://rogueamoeba.com/airfoil/mac/) - `Paid` — Commercial macOS and Windows app for routing audio to AirPlay, Bluetooth, Chromecast, Sonos, and local outputs.
 - [AirParrot](https://www.airsquirrels.com/airparrot/) - `Paid` — Commercial desktop screen mirroring and media streaming app for sending to AirPlay, Google Cast, and Miracast receivers.

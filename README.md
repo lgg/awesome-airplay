@@ -103,6 +103,7 @@ Licensing, pricing, and availability may change. Self-hosting and hardware can e
 - [AirReceiver](https://play.google.com/store/apps/details?id=com.softmedia.receiver) - `Paid` `Audio` `Video` — Android TV and Android box receiver for AirPlay, Google Cast, wireless display, and DLNA.
 - [AriaCast Receiver](https://www.music-assistant.io/plugins/ariacast-receiver/) - `Open Source` `Free` `Audio` — Music Assistant plugin for receiving high-quality audio streamed from Android devices over an AirPlay-like local path. Uses its own protocol rather than AirPlay.
 - [ScreenDock](https://github.com/tarek369/screendock) - `Open Source` `Freemium` `Audio` `Video` — Open-source (GPLv3) AirPlay receiver for Android and Android TV, supporting screen mirroring, audio, and video. The Google Play version offers limited free sessions and an optional one-time Pro unlock.
+- [AirPlay Receiver for Android](https://github.com/jqssun/android-airplay-server) - `Open Source` `Free` `AirPlay 2` `Audio` `Video` — GPL-3.0 UxPlay-based receiver for Android 7.0+ and Android TV with H.264/HEVC screen mirroring, HLS video playback, and AAC/ALAC audio with cover art. Available on GitHub, F-Droid, and Google Play; DRM content is not supported.
 
 ## Bridges and Multiroom
 

@@ -38,7 +38,7 @@ export function validate(readme, matrix) {
     if (!m) { issues.push('Malformed README item at line '+(index+1)); continue; }
     const [,name,url,body] = m;
     if (source.has(name)) issues.push('Duplicate README entry: '+name);
-    source.set(name,{url,section});
+    source.set(name,{url,section,protocol: [...body.split(' — ')[0].matchAll(/\x60([^\x60]+)\x60/g)].map(x=>x[1]).find(x=>protocols.has(x))});
     if (section==='Related Awesome Lists') {
       if (/\x60[^\x60]+\x60/.test(body)) issues.push('Badges on related awesome list: '+name);
       continue;
@@ -69,7 +69,7 @@ export function validate(readme, matrix) {
     const [,name,url]=m;
     if (target.has(name)) issues.push('Duplicate matrix entry: '+name);
     const group=reference?cells[1]:inverseGroups.get(subSection);
-    target.set(name,{url,section:group});
+    target.set(name,{url,section:group,mode:reference?null:cells[2]});
     if (reference) {
       if(cells.length!==3) issues.push('Reference columns invalid: '+name);
       if(!referenceGroups.has(cells[1])) issues.push('Reference group invalid: '+name);
@@ -89,6 +89,16 @@ export function validate(readme, matrix) {
     else {
       if(match.url!==v.url) issues.push('URL mismatch: '+name);
       if(match.section!==v.section) issues.push('Section mismatch: '+name);
+      if(v.protocol) {
+        const mode=match.mode||'';
+        const supportsAirPlay2=/AirPlay\s*(?:2|1\s*(?:\/|or)\s*2)/i.test(mode);
+        const supportsAirPlay1=/AirPlay\s*1/i.test(mode)||/RAOP|AirTunes/i.test(mode);
+        if(v.protocol==='AirPlay 2' && !supportsAirPlay2) issues.push('Protocol mismatch: '+name);
+        if(v.protocol==='AirPlay 2 (Legacy)' && !/AirPlay\s*2/i.test(mode)) issues.push('Protocol mismatch: '+name);
+        if(v.protocol==='AirPlay 1' && !supportsAirPlay1) issues.push('Protocol mismatch: '+name);
+        if(v.protocol==='RAOP' && !/RAOP/i.test(mode)) issues.push('Protocol mismatch: '+name);
+        if(v.protocol==='Custom Protocol' && !/not AirPlay|AriaCast|custom protocol/i.test(mode)) issues.push('Protocol mismatch: '+name);
+      }
     }
   }
   for(const name of target.keys()) if(!source.has(name)) issues.push('Extra matrix resource: '+name);

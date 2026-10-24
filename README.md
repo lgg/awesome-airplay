@@ -77,10 +77,10 @@ Licensing, pricing and availability may change. Self-hosting and hardware can ha
 ## Screen Mirroring Receivers
 
 - [UxPlay](https://github.com/FDH2/UxPlay) - `Open Source` `Free` · `AirPlay 2 (Legacy)` — GStreamer receiver for Linux, macOS, BSD, and Windows. Supports legacy AirPlay 2 mirroring, audio, and limited YouTube HLS; not AirPlay 2 multiroom audio.
-- [RPiPlay](https://github.com/FD-/RPiPlay) - `Open Source` `Free` — Raspberry Pi-oriented AirPlay receiver for H.264 screen mirroring with accompanying AAC audio; standalone AirPlay video playback is unsupported. Video is screen mirroring only.
+- [RPiPlay](https://github.com/FD-/RPiPlay) - `Open Source` `Free` — Raspberry Pi-oriented AirPlay receiver for H.264 screen mirroring with accompanying AAC audio; standalone AirPlay video playback is unsupported.
 - [java-airplay-server](https://github.com/serezhka/java-airplay-server) - `Open Source` `Free` · `AirPlay 2` — Java AirPlay server that acts like an Apple TV for mirroring experiments.
 - [airplayreceiver](https://github.com/SteeBono/airplayreceiver) - `Open Source` `Free` · `AirPlay 2` — C# implementation of AirPlay 2 mirroring and audio protocol for testing across Windows, macOS, and Linux.
-- [AirPlay-Windows](https://github.com/moieric11/AirPlay-Windows) - `Free` · `AirPlay 2` — Native Windows AirPlay 2 receiver for mirroring and RAOP audio without Bonjour SDK or Apple runtime dependencies.
+- [AirPlay-Windows](https://github.com/moieric11/AirPlay-Windows) - `Open Source` `Free` · `AirPlay 2` — GPL-3.0 Windows receiver for H.264/HEVC mirroring and RAOP audio, with experimental opt-in HLS playback; no Bonjour SDK required.
 - [AirGlass](https://github.com/jdkuk/AirGlass) - `Open Source` `Freemium` — GPL-3.0 AirPlay receiver for Windows 10/11 supporting screen mirroring and ALAC audio playback, with built-in mDNS discovery. Free full-screen mode; optional paid floating-window features.
 - [PiP](https://github.com/amitv87/PiP) - `Open Source` `Free` — macOS picture-in-picture utility with AirPlay receiver support for multiple parallel sessions.
 
@@ -96,7 +96,7 @@ Licensing, pricing and availability may change. Self-hosting and hardware can ha
 
 ## Android
 
-- [AirMusic](https://www.airmusic.app/portal/) - `Paid` · `AirPlay 2` — Android app for streaming audio from many apps to AirPlay, DLNA, Sonos, Google Cast, HEOS, Fire TV, Roku, and other receivers. A free trial is available; uninterrupted streaming requires a paid license.
+- [AirMusic](https://www.airmusic.app/) - `Paid` · `AirPlay 2` — Android app for streaming audio from many apps to AirPlay, DLNA, Sonos, Google Cast, HEOS, Fire TV, Roku, and other receivers. A free trial is available; uninterrupted streaming requires a paid license.
 - [AirScreen](https://www.airscreen.app/) - `Freemium` — Android receiver app for AirPlay, Google Cast, Miracast, and DLNA, commonly used on Android TV boxes and Fire TV devices.
 - [AirPin PRO](https://play.google.com/store/apps/details?id=com.waxrain.airplaydmr3) - `Paid` — Android AirPlay and DLNA receiver for phones, tablets, TV boxes, and projectors.
 - [AirReceiver](https://play.google.com/store/apps/details?id=com.softmedia.receiver) - `Paid` — Android TV and Android box receiver for AirPlay, Google Cast, wireless display, and DLNA.

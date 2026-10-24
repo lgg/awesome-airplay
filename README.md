@@ -111,7 +111,6 @@ Licensing, pricing and availability may change. Self-hosting and hardware can ha
 
 - [AirConnect](https://github.com/philippe44/AirConnect) - `Open Source` `Free` · `AirPlay 1` — Bridge that exposes UPnP, Sonos, and Chromecast players as virtual AirPlay devices.
 - [BabelPod](https://github.com/afaden/BabelPod) - `Open Source` `Free` · `AirPlay 1` — Raspberry Pi audio relay for AirPlay speakers, Chromecast, Bluetooth, and line-in; its AirPlay 2 media capabilities are unverified.
-- [AirSonos](https://github.com/stephen/airsonos) - `Open Source` `Free` · `AirPlay 1` — Historical bridge that made Sonos speakers appear as AirPlay receivers.
 
 ## Commercial Receivers
 
@@ -163,6 +162,7 @@ Licensing, pricing and availability may change. Self-hosting and hardware can ha
 
 ## Historical Projects
 
+- [AirSonos](https://github.com/stephen/airsonos) - `Open Source` `Free` · `AirPlay 1` — Archived bridge that made Sonos speakers appear as AirPlay receivers.
 - [ShairPort](https://github.com/abrasive/shairport) - `Open Source` `Free` · `AirPlay 1` — Original open-source AirPort Express emulator that influenced later AirPlay audio receivers.
 - [ShairPlay](https://github.com/juhovh/shairplay) - `Open Source` `Free` · `AirPlay 1` — Early AirPlay audio server library with FairPlay-related work used by later receiver projects.
 - [playfair](https://github.com/FD-/RPiPlay/tree/master/lib/playfair) - `Open Source` `Free` — FairPlay-related code bundled in RPiPlay and UxPlay lineage.

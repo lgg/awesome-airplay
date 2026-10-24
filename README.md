@@ -106,7 +106,7 @@ Licensing, pricing and availability may change. Self-hosting and hardware can ha
 
 ## Related Streaming Technologies
 
-- [AriaCast Receiver](https://www.music-assistant.io/plugins/ariacast-receiver/) - `Open Source` `Free` · `Custom Protocol` — Music Assistant receiver plugin for audio sent from Android via AriaCast's own protocol, not AirPlay.
+- [AriaCast Receiver](https://www.music-assistant.io/plugins/ariacast-receiver/) - `Open Source` `Free` · `Custom Protocol` — Experimental Music Assistant plugin for receiving AriaCast audio from Android (not AirPlay); supports only one concurrent sender.
 
 ## Bridges and Multiroom
 
@@ -129,7 +129,7 @@ Licensing, pricing and availability may change. Self-hosting and hardware can ha
 
 - [PipeWire RAOP Sink](https://man.archlinux.org/man/extra/pipewire-zeroconf/libpipewire-module-raop-sink.7.en) - `Open Source` `Free` · `AirPlay 1` — PipeWire module for streaming Linux audio to AirPlay devices.
 - [PipeWire RAOP Discover](https://docs.pipewire.org/page_module_raop_discover.html) - `Open Source` `Free` · `AirPlay 1` — PipeWire module that discovers AirPlay/RAOP receivers on Linux; discovery itself is not an audio streaming implementation.
-- [PipeWire AirPlay Toggle](https://extensions.gnome.org/extension/7652/pipewire-airplay-toggle/) - `Open Source` `Free` · `AirPlay 1` — GNOME Shell extension for toggling PipeWire or PulseAudio AirPlay discovery, not a standalone audio sender.
+- [PipeWire AirPlay Toggle](https://extensions.gnome.org/extension/7652/pipewire-airplay-toggle/) - `Open Source` `Free` · `AirPlay 1` — GNOME Shell 45–50 extension for toggling PipeWire/RAOP discovery (also PulseAudio since version 8), not a standalone audio sender.
 - [PulseAudio RAOP Modules](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#module-raop-discover) - `Open Source` `Free` · `AirPlay 1` — PulseAudio modules for discovering and sending audio to RAOP and AirPlay devices.
 
 ## Libraries and Protocol Implementations
@@ -143,7 +143,7 @@ Licensing, pricing and availability may change. Self-hosting and hardware can ha
 
 - [Avahi](https://www.avahi.org/) - `Open Source` `Free` — Zeroconf and mDNS implementation used on Linux to discover AirPlay and RAOP services.
 - [Discovery for macOS](https://apps.apple.com/us/app/discovery-dns-sd-browser/id1381004916) - `Free` — macOS DNS-SD browser (successor to Bonjour Browser) for inspecting AirPlay, RAOP, and other advertised network services.
-- [Discovery for iOS](https://apps.apple.com/us/app/discovery-dns-sd-browser/id305441017) - `Free` — iPhone/iPad DNS-SD browser for inspecting AirPlay, RAOP, and other Bonjour services.
+- [Discovery for iPhone](https://apps.apple.com/us/app/discovery-dns-sd-browser/id305441017) - `Free` — iPhone-only App Store listing for a Bonjour/DNS-SD browser used to inspect AirPlay, RAOP and other advertised services.
 - [Wireshark](https://www.wireshark.org/) - `Open Source` `Free` — Packet analyzer for inspecting mDNS, RTSP, RTP, HTTP, and TLS traffic around AirPlay sessions.
 - [tcpdump](https://www.tcpdump.org/) - `Open Source` `Free` — Command-line packet capture tool for recording AirPlay discovery and streaming traffic before deeper analysis.
 - [Auto Accept AirPlay Requests](https://github.com/duddu/auto-accept-airplay-requests) - `Open Source` `Free` — macOS helper that automatically accepts AirPlay receiver prompts for trusted local setups.

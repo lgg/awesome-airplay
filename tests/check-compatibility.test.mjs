@@ -69,3 +69,23 @@ test('malformed matrix link row fails even if original still exists',()=>{
   const broken=row.replace('| [Shairport Sync]','|[Another Alias]');
   fails(readme,matrix.replace(row,row+'\n'+broken),'Malformed matrix link row');
 });
+
+test('non-HTTPS resource URLs fail even if both files agree',()=>{
+  const altered=readme.replace('https://github.com/mikebrady/shairport-sync','http://github.com/mikebrady/shairport-sync');
+  const mirrored=matrix.replace('https://github.com/mikebrady/shairport-sync','http://github.com/mikebrady/shairport-sync');
+  fails(altered,mirrored,'Non-HTTPS README URL');
+  fails(altered,mirrored,'Non-HTTPS matrix URL');
+});
+test('non-HTTPS reference links fail',()=>{
+  const refLine=readme.split('\n').find(x=>x.startsWith('- [Discovery for iPhone]'));
+  assert.ok(refLine);
+  fails(readme.replace(refLine,refLine.replace('https://','http://')),matrix,'Non-HTTPS README URL');
+});
+test('both Discovery App Store IDs are kept distinct',()=>{
+  const mac='https://apps.apple.com/us/app/discovery-dns-sd-browser/id1381004916';
+  const iphone='https://apps.apple.com/us/app/discovery-dns-sd-browser/id305441017';
+  for(const url of [mac,iphone]){
+    assert.ok(readme.includes(url),'README missing '+url);
+    assert.ok(matrix.includes(url),'COMPATIBILITY missing '+url);
+  }
+});

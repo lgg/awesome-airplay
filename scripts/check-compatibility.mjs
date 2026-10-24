@@ -39,8 +39,8 @@ export function validate(readme, matrix) {
     const [,name,url,body] = m;
     if (source.has(name)) issues.push('Duplicate README entry: '+name);
     source.set(name,{url,section});
-    if (referenceGroups.has(section)) {
-      if (/\x60[^\x60]+\x60/.test(body)) issues.push('Badges on reference resource: '+name);
+    if (section==='Related Awesome Lists') {
+      if (/\x60[^\x60]+\x60/.test(body)) issues.push('Badges on related awesome list: '+name);
       continue;
     }
     const parts=body.split(' — ');

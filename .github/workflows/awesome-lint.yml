@@ -6,18 +6,21 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+
 jobs:
   awesome-lint:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: '20'
+          node-version: '24'
 
       - name: Test compatibility checker
         run: node --test tests/check-compatibility.test.mjs
@@ -26,4 +29,4 @@ jobs:
         run: node scripts/check-compatibility.mjs
 
       - name: Run awesome-lint
-        run: npx awesome-lint
+        run: npx --yes awesome-lint@2.3.0

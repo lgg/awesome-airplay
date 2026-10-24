@@ -144,4 +144,4 @@ These README entries are not themselves general-purpose streaming senders/receiv
 
 Consult primary documentation, license and releases where possible. Record limitations such as legacy modes, HLS-only video, DRM restrictions, build flags, and no multiroom. If unsure, use **?**; never infer the full AirPlay 2 feature set from a logo, product name, pairing support, or a claim of compatibility with an AirPlay 2 device.
 
-Run `node scripts/check-compatibility.mjs` after editing. It checks name/link coverage and tag limits but does **not** verify feature claims or upstream links.
+Run `node scripts/check-compatibility.mjs` and `node --test tests/check-compatibility.test.mjs` after editing. They verify index coverage, section alignment, table shape, feature-flag syntax, and tag limits, **not** actual upstream feature claims or live link reachability.

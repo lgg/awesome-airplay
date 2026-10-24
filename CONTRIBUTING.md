@@ -52,8 +52,9 @@ This is a curated list, not a complete directory. A good entry should answer at 
 Run both checks before submitting:
 
 ```sh
+node --test tests/check-compatibility.test.mjs
 node scripts/check-compatibility.mjs
-npx awesome-lint
+npx --yes awesome-lint@2.3.0
 ```
 
 The compatibility check ensures every README resource appears in the matrix with the same name/URL, without too many tags. It cannot prove the correctness of upstream claims.

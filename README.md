@@ -141,8 +141,8 @@ Licensing, pricing and availability may change. Self-hosting and hardware can ha
 ## Debugging and Discovery
 
 - [Avahi](https://www.avahi.org/) - `Open Source` `Free` — Zeroconf and mDNS implementation used on Linux to discover AirPlay and RAOP services.
-- [Bonjour Browser](https://www.tildesoft.com/) - `Free` — macOS utility for browsing Bonjour and mDNS services, useful when checking AirPlay advertisements.
-- [Discovery](https://apps.apple.com/us/app/discovery-dns-sd-browser/id305441017) - `Free` — iOS and macOS DNS-SD browser for inspecting AirPlay, RAOP, and companion services.
+- [Discovery for macOS](https://apps.apple.com/us/app/discovery-dns-sd-browser/id1381004916) - `Free` — macOS DNS-SD browser (successor to Bonjour Browser) for inspecting AirPlay, RAOP, and other advertised network services.
+- [Discovery for iOS](https://apps.apple.com/us/app/discovery-dns-sd-browser/id305441017) - `Free` — iPhone/iPad DNS-SD browser for inspecting AirPlay, RAOP, and other Bonjour services.
 - [Wireshark](https://www.wireshark.org/) - `Open Source` `Free` — Packet analyzer for inspecting mDNS, RTSP, RTP, HTTP, and TLS traffic around AirPlay sessions.
 - [tcpdump](https://www.tcpdump.org/) - `Open Source` `Free` — Command-line packet capture tool for recording AirPlay discovery and streaming traffic before deeper analysis.
 - [Auto Accept AirPlay Requests](https://github.com/duddu/auto-accept-airplay-requests) - `Open Source` `Free` — macOS helper that automatically accepts AirPlay receiver prompts for trusted local setups.
@@ -152,7 +152,6 @@ Licensing, pricing and availability may change. Self-hosting and hardware can ha
 - [AirBorne by Oligo Security](https://www.oligo.security/blog/airborne) - `Free` — Research on vulnerabilities in AirPlay and the AirPlay SDK affecting Apple and third-party devices.
 - [Apple Security Releases](https://support.apple.com/en-us/100100) - `Free` — Official Apple security update index for tracking fixes that may affect AirPlay, tvOS, HomePod, iOS, iPadOS, and macOS.
 - [Apple Platform Security](https://support.apple.com/guide/security/welcome/web) - `Free` — Apple's security guide for understanding platform controls around local networking, pairing, and media services.
-- [Protocol Prying](https://arxiv.org/abs/2606.26967) - `Free` — Academic work on reverse engineering and fuzzing proximity transfer protocols such as AirDrop and Quick Share, useful as a methodology reference for closed local-network protocols.
 
 ## Protocol Notes
 

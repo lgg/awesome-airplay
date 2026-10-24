@@ -122,15 +122,14 @@ These README entries are not themselves general-purpose streaming senders/receiv
 | Resource | README section | Why it is here |
 | --- | --- | --- |
 | [Avahi](https://www.avahi.org/) | Debugging and Discovery | mDNS/Zeroconf service discovery, not a media endpoint. |
-| [Bonjour Browser](https://www.tildesoft.com/) | Debugging and Discovery | Desktop DNS-SD browser used for diagnosis. |
-| [Discovery](https://apps.apple.com/us/app/discovery-dns-sd-browser/id305441017) | Debugging and Discovery | iOS/macOS DNS-SD browser for identifying advertised services. |
+| [Discovery for macOS](https://apps.apple.com/us/app/discovery-dns-sd-browser/id1381004916) | Debugging and Discovery | macOS Bonjour/DNS-SD browser, formerly Bonjour Browser. |
+| [Discovery for iOS](https://apps.apple.com/us/app/discovery-dns-sd-browser/id305441017) | Debugging and Discovery | iOS/iPadOS DNS-SD browser for identifying advertised services. |
 | [Wireshark](https://www.wireshark.org/) | Debugging and Discovery | Packet analyzer for discovering AirPlay protocol issues. |
 | [tcpdump](https://www.tcpdump.org/) | Debugging and Discovery | Command-line packet capture for debugging. |
 | [Auto Accept AirPlay Requests](https://github.com/duddu/auto-accept-airplay-requests) | Debugging and Discovery | Trusted-local-network helper for receiver permission dialogs. |
 | [AirBorne by Oligo Security](https://www.oligo.security/blog/airborne) | Security Research | AirPlay vulnerability research and defensive analysis. |
 | [Apple Security Releases](https://support.apple.com/en-us/100100) | Security Research | Official vulnerability and patch tracking. |
 | [Apple Platform Security](https://support.apple.com/guide/security/welcome/web) | Security Research | Apple platform security documentation. |
-| [Protocol Prying](https://arxiv.org/abs/2606.26967) | Security Research | Reverse-engineering/fuzzing research on proximity protocols. |
 | [Emanuele Cozzi's AirPlay 2 Notes](https://emanuelecozzi.net/docs/airplay2/) | Protocol Notes | Unpublished-protocol reverse-engineering notes. |
 | [Unofficial AirPlay Protocol Specification](https://nto.github.io/AirPlay.html) | Protocol Notes | AirPlay and AirTunes specification reference. |
 | [pyatv AirPlay Stream Documentation](https://pyatv.dev/development/stream/) | Protocol Notes | Development documentation for streaming in pyatv. |

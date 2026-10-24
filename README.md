@@ -103,6 +103,8 @@ Licensing, pricing and availability may change. Self-hosting and hardware can ha
 - [ScreenDock](https://github.com/tarek369/screendock) - `Open Source` `Freemium` — GPLv3 Android/Android TV receiver for screen mirroring, AirPlay audio, and video playback; streaming music is free, while the Play Store limits mirroring/video without the one-time Pro unlock.
 - [AirPlay Receiver for Android](https://github.com/jqssun/android-airplay-server) - `Open Source` `Free` · `AirPlay 2 (Legacy)` — GPL-3.0 UxPlay-based Android 7.0+ and Android TV receiver with audio, screen mirroring, and HLS video. Legacy-mode limitations apply; DRM content is unsupported.
 
+- [centuryplay](https://github.com/g8row/centuryplay) - `Open Source` `Free` · `AirPlay 2` — AGPL-3.0 Android 11+ audio sender supporting AirPlay 1 (RAOP) and AirPlay 2, ALAC streaming, per-speaker volume, and multiroom playback. Some apps block audio capture; HomePod and Sonos interoperability is not fully verified.
+
 ## Related Streaming Technologies
 
 - [AriaCast Receiver](https://www.music-assistant.io/plugins/ariacast-receiver/) - `Open Source` `Free` · `Custom Protocol` — Music Assistant receiver plugin for audio sent from Android via AriaCast's own protocol, not AirPlay.
@@ -161,6 +163,7 @@ Licensing, pricing and availability may change. Self-hosting and hardware can ha
 
 ## Historical Projects
 
+- [Android2Apple4Music](https://github.com/MarcPelberg/android2apple4music) - `Open Source` `Free` — Archived GPL-3.0 Android sender for capturing permitted app audio (for example, Spotify) and playing it on HomePod or AirPlay-compatible receivers; Android playback-capture and DRM restrictions apply.
 - [AirSonos](https://github.com/stephen/airsonos) - `Open Source` `Free` · `AirPlay 1` — Archived bridge that made Sonos speakers appear as AirPlay receivers.
 - [ShairPort](https://github.com/abrasive/shairport) - `Open Source` `Free` · `AirPlay 1` — Original open-source AirPort Express emulator that influenced later AirPlay audio receivers.
 - [ShairPlay](https://github.com/juhovh/shairplay) - `Open Source` `Free` · `AirPlay 1` — Early AirPlay audio server library with FairPlay-related work used by later receiver projects.

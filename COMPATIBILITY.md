@@ -59,6 +59,8 @@ This companion catalog covers **every resource listed in the README**. Capabilit
 | [ScreenDock](https://github.com/tarek369/screendock) | Android / Android TV | AirPlay (version unverified) | ✓ | ✓ | ✓ | — | Upstream documents web/YouTube AirPlay video; free music, limited Play Store mirroring/video; DRM and AirPlay 2 multiroom unavailable. |
 | [AirPlay Receiver for Android](https://github.com/jqssun/android-airplay-server) | Android 7+ / Android TV | AirPlay 2 (UxPlay legacy) | ✓ | ✓ | ◐ | — | HLS available; no DRM; UxPlay legacy restrictions apply. |
 
+| [centuryplay](https://github.com/g8row/centuryplay) | Android 11+ | AirPlay 1 (RAOP); AirPlay 2 realtime (upstream claim) | ✓ | — | — | ✓ | ALAC audio; multiroom verified upstream with Shairport Sync, while HomePod/Sonos AirPlay 2 playback is mostly expected rather than device-verified. App capture restrictions and FairPlay-only receiver limitations apply. |
+
 ### Related, non-AirPlay streaming
 
 | Project | Platform | Protocol / mode | Audio | Mirroring | Video | Multiroom | Notes |
@@ -110,6 +112,7 @@ This companion catalog covers **every resource listed in the README**. Capabilit
 
 | Project | Platform | Protocol / mode | Audio | Mirroring | Video | Multiroom | Notes |
 | --- | --- | --- | :---: | :---: | :---: | :---: | --- |
+| [Android2Apple4Music](https://github.com/MarcPelberg/android2apple4music) | Android (archived project) | AirPlay audio sender (version not specified) | ✓ | — | — | ? | Android playback capture only from apps that permit it; no screen mirroring or DRM bypass. Upstream tested a HomePod 2nd gen; project repository is archived. |
 | [AirSonos](https://github.com/stephen/airsonos) | Node.js / Sonos | AirPlay 1 / RAOP | ✓ | — | — | — | Maintainer-archived legacy Sonos-to-AirPlay bridge, not for new installations. |
 | [ShairPort](https://github.com/abrasive/shairport) | Legacy cross-platform | AirPlay 1 / RAOP | ✓ | — | — | — | Historical AirPort Express emulator. |
 | [ShairPlay](https://github.com/juhovh/shairplay) | Legacy library | AirPlay 1 | ✓ | ? | ? | — | Early protocol implementation, not actively developed. |

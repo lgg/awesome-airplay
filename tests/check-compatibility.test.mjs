@@ -52,7 +52,7 @@ test('unknown README section cannot silently hide new resources',()=>{
   fails(added,matrix,'Unknown README resource section');
 });
 test('duplicate URL under a different name is reported',()=>{
-  fails(readme.replace(line,line.replace('[Shairport Sync]','[Shairport Mirror]')),matrix,'Duplicate README URL');
+  fails(readme.replace(line,line+'\n'+line.replace('[Shairport Sync]','[Shairport Mirror]')),matrix,'Duplicate README URL');
 });
 test('misordered README badges are rejected',()=>{
   fails(readme.replace(line,line.replace('`Open Source` `Free`','`Free` `Open Source`')),matrix,'Malformed or misordered badges');

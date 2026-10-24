@@ -43,6 +43,7 @@ export function validate(readme, matrix) {
     const m = entryRE.exec(line);
     if (!m) { issues.push('Malformed README item at line '+(index+1)); continue; }
     const [,name,url,body] = m;
+    if (!url.startsWith('https://')) issues.push('Non-HTTPS README URL: '+name);
     if (source.has(name)) issues.push('Duplicate README entry: '+name);
     if (sourceUrls.has(url)) issues.push('Duplicate README URL: '+url);
     sourceUrls.set(url,name);
@@ -85,6 +86,7 @@ export function validate(readme, matrix) {
     const m=linkRE.exec(cells[0]||'');
     if (!m) { issues.push('Malformed matrix item at line '+(index+1)); continue; }
     const [,name,url]=m;
+    if (!url.startsWith('https://')) issues.push('Non-HTTPS matrix URL: '+name);
     if (target.has(name)) issues.push('Duplicate matrix entry: '+name);
     const group=reference?cells[1]:inverseGroups.get(subSection);
     target.set(name,{url,section:group,mode:reference?null:cells[2]});

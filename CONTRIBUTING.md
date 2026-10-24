@@ -19,7 +19,7 @@ Thanks for helping improve Awesome AirPlay.
 - Put commercial tools in the most relevant section and avoid affiliate links.
 - Put abandoned or mainly historical projects in the Historical Projects section.
 - Do not add piracy, cracked apps, exploit code, or instructions for attacking devices.
-- Check that every link works before opening a pull request.
+- Check that every link works before opening a pull request. Use canonical HTTPS URLs; do not add plain HTTP resource links. Verify app-platform restrictions against the official store page.
 
 ## Resource Labels
 
@@ -57,4 +57,4 @@ node scripts/check-compatibility.mjs
 npx --yes awesome-lint@2.3.0
 ```
 
-The compatibility check verifies matching README/matrix names and URLs, flags duplicate URLs and unregistered resource sections, checks categories, table structure, badges and protocol claims. New resource sections must be added to the checker's category map. Tests cover malformed data as well as known recent entries. These checks cannot independently prove upstream feature claims, live link availability or hardware interoperability.
+The compatibility check verifies matching README/matrix names and URLs, flags duplicate URLs and unregistered resource sections, checks categories, table structure, badges and protocol claims. New resource sections must be added to the checker's category map. Tests cover malformed data as well as known recent entries. These checks cannot independently prove upstream feature claims, live link availability or hardware interoperability. For uncertain features, document the exact upstream claim and its limitations instead of guessing.

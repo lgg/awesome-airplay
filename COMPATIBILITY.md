@@ -65,7 +65,7 @@ This companion catalog covers **every resource listed in the README**. Capabilit
 
 | Project | Platform | Protocol / mode | Audio | Mirroring | Video | Multiroom | Notes |
 | --- | --- | --- | :---: | :---: | :---: | :---: | --- |
-| [AriaCast Receiver](https://www.music-assistant.io/plugins/ariacast-receiver/) | Android to Music Assistant | AriaCast (not AirPlay) | ✓ | — | — | ? | Separate transport; not directly AirPlay-compatible. |
+| [AriaCast Receiver](https://www.music-assistant.io/plugins/ariacast-receiver/) | Android / Music Assistant | AriaCast (not AirPlay) | ✓ | — | — | ? | Early-stage Music Assistant plugin using a distinct protocol; only one connected Android sender at a time; functionality may be limited. |
 
 ### Bridges and relays
 
@@ -96,7 +96,7 @@ This companion catalog covers **every resource listed in the README**. Capabilit
 | --- | --- | --- | :---: | :---: | :---: | :---: | --- |
 | [PipeWire RAOP Sink](https://man.archlinux.org/man/extra/pipewire-zeroconf/libpipewire-module-raop-sink.7.en) | Linux / PipeWire | AirPlay 1 / RAOP | ✓ | — | — | — | Linux module that sends RAOP audio. |
 | [PipeWire RAOP Discover](https://docs.pipewire.org/page_module_raop_discover.html) | Linux / PipeWire | RAOP discovery | — | — | — | — | Discovery component only, no audio by itself. |
-| [PipeWire AirPlay Toggle](https://extensions.gnome.org/extension/7652/pipewire-airplay-toggle/) | Linux / GNOME | RAOP discovery controls | — | — | — | — | Toggles another component, not a standalone sender. |
+| [PipeWire AirPlay Toggle](https://extensions.gnome.org/extension/7652/pipewire-airplay-toggle/) | Linux / GNOME 45–50 | RAOP discovery controls | — | — | — | — | Controls PipeWire RAOP discovery; PulseAudio available since extension v8. A UI toggle rather than its own sender. |
 | [PulseAudio RAOP Modules](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#module-raop-discover) | Linux / PulseAudio | AirPlay 1 / RAOP | ✓ | — | — | — | RAOP sink and discovery modules. |
 
 ### Libraries and protocol implementations
@@ -126,7 +126,7 @@ These README entries are not themselves general-purpose streaming senders/receiv
 | --- | --- | --- |
 | [Avahi](https://www.avahi.org/) | Debugging and Discovery | mDNS/Zeroconf service discovery, not a media endpoint. |
 | [Discovery for macOS](https://apps.apple.com/us/app/discovery-dns-sd-browser/id1381004916) | Debugging and Discovery | macOS Bonjour/DNS-SD browser, formerly Bonjour Browser. |
-| [Discovery for iOS](https://apps.apple.com/us/app/discovery-dns-sd-browser/id305441017) | Debugging and Discovery | iOS/iPadOS DNS-SD browser for identifying advertised services. |
+| [Discovery for iPhone](https://apps.apple.com/us/app/discovery-dns-sd-browser/id305441017) | Debugging and Discovery | App Store lists this DNS-SD browser for iPhone only; the macOS version is a separate app. |
 | [Wireshark](https://www.wireshark.org/) | Debugging and Discovery | Packet analyzer for discovering AirPlay protocol issues. |
 | [tcpdump](https://www.tcpdump.org/) | Debugging and Discovery | Command-line packet capture for debugging. |
 | [Auto Accept AirPlay Requests](https://github.com/duddu/auto-accept-airplay-requests) | Debugging and Discovery | Trusted-local-network helper for receiver permission dialogs. |

@@ -12,7 +12,7 @@
 ## Checklist
 
 - [ ] The entry is directly related to AirPlay, RAOP, AirPlay 2, or AirPlay-compatible tooling.
-- [ ] The link is reachable and points to the canonical source.
+- [ ] The link is reachable, canonical and not already present under another name; upstream README and current license were checked.
 - [ ] The description explains why the resource is useful.
 - [ ] The description is concise, neutral, and ends with a period.
 - [ ] Commercial, experimental, or historical status is clear when relevant.

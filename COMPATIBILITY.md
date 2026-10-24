@@ -52,7 +52,7 @@ This companion catalog covers **every resource listed in the README**. Capabilit
 
 | Project | Platform | Protocol / mode | Audio | Mirroring | Video | Multiroom | Notes |
 | --- | --- | --- | :---: | :---: | :---: | :---: | --- |
-| [AirMusic](https://www.airmusic.app/) | Android | AirPlay 1 / 2 | ✓ | — | — | ? | Uninterrupted audio requires payment. |
+| [AirMusic](https://www.airmusic.app/) | Android 10+ | AirPlay 1 / 2 | ✓ | — | — | ✓ | Vendor documents synchronized AirPlay 2 multiroom and HomePod stereo pairs. Trial inserts a test signal after 10 minutes; app capture and mixed-protocol sync have limitations. |
 | [AirScreen](https://www.airscreen.app/) | Android / Android TV | AirPlay (version unverified) | ✓ | ✓ | ? | — | Also supports Cast, Miracast, DLNA; free limits may apply. |
 | [AirPin PRO](https://play.google.com/store/apps/details?id=com.waxrain.airplaydmr3) | Android / Android TV | AirPlay (version unverified) | ✓ | ✓ | ? | — | Commercial receiver also supporting DLNA. |
 | [AirReceiver](https://play.google.com/store/apps/details?id=com.softmedia.receiver) | Android TV / boxes | AirPlay (version unverified) | ✓ | ✓ | ? | — | Also supports other wireless-display technologies. |
@@ -86,9 +86,9 @@ This companion catalog covers **every resource listed in the README**. Capabilit
 
 | Project | Platform | Protocol / mode | Audio | Mirroring | Video | Multiroom | Notes |
 | --- | --- | --- | :---: | :---: | :---: | :---: | --- |
-| [rpi-audio-receiver](https://github.com/nicokaiser/rpi-audio-receiver) | Raspberry Pi / Linux | AirPlay 2 | ✓ | — | — | ? | DIY setup combining AirPlay 2, Bluetooth and Spotify Connect. |
-| [airplay-esp32](https://github.com/rbouteiller/airplay-esp32) | ESP32 / ESP32-S3 | AirPlay 2 (project claim) | ◐ | — | — | ? | Embedded experimental implementation with non-commercial licensing. |
-| [raspi-play](https://github.com/N8WM/raspi-play) | Raspberry Pi Zero 2 W | AirPlay 2 (tutorial) | ✓ | — | — | ? | Assembly instructions rather than one packaged app. |
+| [rpi-audio-receiver](https://github.com/nicokaiser/rpi-audio-receiver) | Raspberry Pi / Linux | AirPlay 2 (Shairport Sync) | ✓ | — | — | ? | DIY installer for AirPlay 2, Bluetooth and Spotify Connect. Upstream explicitly says in-place upgrades are unsupported; use a clean Raspberry Pi OS installation. |
+| [airplay-esp32](https://github.com/rbouteiller/airplay-esp32) | ESP32 / ESP32-S2 / ESP32-S3 / ESP32-C5 | AirPlay 2 (upstream claim) | ✓ | — | — | ✓ | Upstream documents ALAC/AAC and PTP-synchronized multiroom; these are advertised capabilities, not independently tested here. Non-commercial-use license; Bluetooth A2DP is ESP32-board-specific. |
+| [raspi-play](https://github.com/N8WM/raspi-play) | Raspberry Pi Zero 2 W | AirPlay 2 via Shairport Sync (tutorial) | ✓ | — | — | ? | Incomplete upstream build guide (ends with 'to be continued'); Shairport Sync and NQPTP must be installed separately. Not a ready-to-install image or tested installer. |
 
 ### Linux audio integration
 

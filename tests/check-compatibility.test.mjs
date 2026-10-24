@@ -46,3 +46,26 @@ test('the catalog keeps the two Android senders',()=>{
     assert.ok(matrix.includes(repo),'COMPATIBILITY missing '+repo);
   }
 });
+
+test('unknown README section cannot silently hide new resources',()=>{
+  const added=readme.replace('## Android\n','## Android\n\n## Newly Added Streaming Apps\n');
+  fails(added,matrix,'Unknown README resource section');
+});
+test('duplicate URL under a different name is reported',()=>{
+  fails(readme.replace(line,line.replace('[Shairport Sync]','[Shairport Mirror]')),matrix,'Duplicate README URL');
+});
+test('misordered README badges are rejected',()=>{
+  fails(readme.replace(line,line.replace('`Open Source` `Free`','`Free` `Open Source`')),matrix,'Malformed or misordered badges');
+});
+test('extra text next to badges is rejected',()=>{
+  fails(readme.replace(line,line.replace('`Free`','`Free` accidentally')),matrix,'Malformed or misordered badges');
+});
+test('reference list requires a description period',()=>{
+  const listing=readme.split('\n').find(x=>x.startsWith('- [Awesome Home Assistant]'));
+  assert.ok(listing);
+  fails(readme.replace(listing,listing.slice(0,-1)),matrix,'Missing related-list description period');
+});
+test('malformed matrix link row fails even if original still exists',()=>{
+  const broken=row.replace('| [Shairport Sync]','|[Another Alias]');
+  fails(readme,matrix.replace(row,row+'\n'+broken),'Malformed matrix link row');
+});

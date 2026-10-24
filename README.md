@@ -102,7 +102,6 @@ Licensing, pricing and availability may change. Self-hosting and hardware can ha
 - [AirReceiver](https://play.google.com/store/apps/details?id=com.softmedia.receiver) - `Paid` — Android TV and Android box receiver for AirPlay, Google Cast, wireless display, and DLNA.
 - [ScreenDock](https://github.com/tarek369/screendock) - `Open Source` `Freemium` — GPLv3 Android/Android TV receiver for screen mirroring, AirPlay audio, and video playback; streaming music is free, while the Play Store limits mirroring/video without the one-time Pro unlock.
 - [AirPlay Receiver for Android](https://github.com/jqssun/android-airplay-server) - `Open Source` `Free` · `AirPlay 2 (Legacy)` — GPL-3.0 UxPlay-based Android 7.0+ and Android TV receiver with audio, screen mirroring, and HLS video. Legacy-mode limitations apply; DRM content is unsupported.
-
 - [centuryplay](https://github.com/g8row/centuryplay) - `Open Source` `Free` · `AirPlay 2` — AGPL-3.0 Android 11+ audio sender supporting AirPlay 1 (RAOP) and AirPlay 2, ALAC streaming, per-speaker volume, and multiroom playback. Some apps block audio capture; HomePod and Sonos interoperability is not fully verified.
 
 ## Related Streaming Technologies
@@ -123,8 +122,8 @@ Licensing, pricing and availability may change. Self-hosting and hardware can ha
 ## Hardware and DIY
 
 - [rpi-audio-receiver](https://github.com/nicokaiser/rpi-audio-receiver) - `Open Source` `Free` · `AirPlay 2` — Raspberry Pi audio receiver setup with AirPlay 2, Bluetooth A2DP, and Spotify Connect.
-- [airplay-esp32](https://github.com/rbouteiller/airplay-esp32) - `Free` · `AirPlay 2` — ESP32 and ESP32-S3 AirPlay 2 audio receiver for building low-cost wireless speakers; licensed for non-commercial use.
-- [raspi-play](https://github.com/N8WM/raspi-play) - `Free` · `AirPlay 2` — Tutorial for building a compact Raspberry Pi Zero 2 W AirPlay 2 audio receiver.
+- [airplay-esp32](https://github.com/rbouteiller/airplay-esp32) - `Free` · `AirPlay 2` — Non-commercial AirPlay 2 audio receiver firmware for ESP32, ESP32-S2, ESP32-S3 and ESP32-C5 boards, with ALAC/AAC decoding and PTP-synchronized multiroom audio.
+- [raspi-play](https://github.com/N8WM/raspi-play) - `Free` · `AirPlay 2` — Raspberry Pi Zero 2 W receiver build guide based on Shairport Sync; the published step-by-step instructions are unfinished, so cross-check against current Raspberry Pi and Shairport documentation.
 
 ## Linux Audio Stack
 

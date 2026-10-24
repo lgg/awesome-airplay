@@ -57,4 +57,4 @@ node scripts/check-compatibility.mjs
 npx --yes awesome-lint@2.3.0
 ```
 
-The compatibility check verifies matching README/matrix names, URLs, sections, protocol badges versus documented modes, table shape, and label limits. It cannot independently prove upstream feature claims or availability.
+The compatibility check verifies matching README/matrix names and URLs, flags duplicate URLs and unregistered resource sections, checks categories, table structure, badges and protocol claims. New resource sections must be added to the checker's category map. Tests cover malformed data as well as known recent entries. These checks cannot independently prove upstream feature claims, live link availability or hardware interoperability.

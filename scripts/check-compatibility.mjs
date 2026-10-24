@@ -30,17 +30,26 @@ export function validate(readme, matrix) {
   const issues = [];
   let section = null;
   const source = new Map();
+  const sourceUrls = new Map();
   for (const [index,line] of readme.split(/\r?\n/).entries()) {
     const h = /^## (.+)$/.exec(line);
     if (h) section = h[1];
-    if (!(groupMap.has(section) || referenceGroups.has(section)) || !line.startsWith('- ')) continue;
+    if (!line.startsWith('- ')) continue;
+    const isKnownSection=groupMap.has(section) || referenceGroups.has(section);
+    // Any external Markdown list link is a catalog resource, even under a new heading.
+    // Do not let an unregistered category silently hide its entries from validation.
+    if (!isKnownSection && !/^- \[[^\]]+\]\(https?:\/\//.test(line)) continue;
+    if (!isKnownSection) issues.push('Unknown README resource section: '+section);
     const m = entryRE.exec(line);
     if (!m) { issues.push('Malformed README item at line '+(index+1)); continue; }
     const [,name,url,body] = m;
     if (source.has(name)) issues.push('Duplicate README entry: '+name);
+    if (sourceUrls.has(url)) issues.push('Duplicate README URL: '+url);
+    sourceUrls.set(url,name);
     source.set(name,{url,section,protocol: [...body.split(' — ')[0].matchAll(/\x60([^\x60]+)\x60/g)].map(x=>x[1]).find(x=>protocols.has(x))});
     if (section==='Related Awesome Lists') {
       if (/\x60[^\x60]+\x60/.test(body)) issues.push('Badges on related awesome list: '+name);
+      if (!body.trim().endsWith('.')) issues.push('Missing related-list description period: '+name);
       continue;
     }
     const parts=body.split(' — ');
@@ -53,6 +62,11 @@ export function validate(readme, matrix) {
     if (tags.filter(x=>x==='Open Source').length>1) issues.push('Duplicate license badge: '+name);
     if (tags.filter(x=>protocols.has(x)).length>1) issues.push('Multiple protocol badges: '+name);
     if (tags.some(x=>protocols.has(x))!==parts[0].includes(' · ')) issues.push('Protocol separator: '+name);
+    // Tags must occupy the entire prefix; no forgotten badges, prefixes or stray text.
+    const canonical=(tags.includes('Open Source')?'`Open Source` ':'')+
+      (tags.find(x=>prices.has(x))?'`'+tags.find(x=>prices.has(x))+'`':'')+
+      (tags.find(x=>protocols.has(x))?' · `'+tags.find(x=>protocols.has(x))+'`':'');
+    if (parts[0]!==canonical) issues.push('Malformed or misordered badges: '+name);
   }
   if (source.size===0) issues.push('README parsed no resources');
   const target = new Map();
@@ -62,6 +76,10 @@ export function validate(readme, matrix) {
     if (h2) { reference=h2[1]==='Discovery, research, and other references'; subSection=null; }
     const h3=/^### (.+)$/.exec(line);
     if (h3) subSection=h3[1];
+    if (!line.startsWith('| [') && /^\|.*\]\(https?:\/\//.test(line)) {
+      issues.push('Malformed matrix link row at line '+(index+1));
+      continue;
+    }
     if (!line.startsWith('| [')) continue;
     const cells=line.split(/(?<!\\)\|/).slice(1,-1).map(x=>x.trim());
     const m=linkRE.exec(cells[0]||'');

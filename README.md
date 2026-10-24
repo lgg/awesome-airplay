@@ -69,8 +69,7 @@ Licensing, pricing and availability may change. Self-hosting and hardware can ha
 
 ## Audio Receivers
 
-- [Shairport Sync](https://github.com/mikebrady/shairport-sync) - `Open Source` `Free` · `AirPlay 2` — AirPlay and AirPlay 2 audio player for Linux, FreeBSD, and OpenBSD with synchronization, metadata, MQTT, D-Bus, and MPRIS-style integrations.
-- [OwnTone](https://owntone.github.io/owntone-server/) - `Open Source` `Free` · `AirPlay 2` — Open-source media server for GNU/Linux, FreeBSD, and macOS that can stream a local library to AirPlay, Chromecast, Roku, and local audio outputs.
+- [Shairport Sync](https://github.com/mikebrady/shairport-sync) - `Open Source` `Free` · `AirPlay 2` — AirPlay 1/2 audio receiver for Linux, FreeBSD, macOS, and OpenBSD (protocol chosen at build time); includes metadata, synchronization, MQTT, and D-Bus integrations.
 - [openairplay/airplay2-receiver](https://github.com/openairplay/airplay2-receiver) - `Free` · `AirPlay 2` — Experimental Python AirPlay 2 receiver implementation for protocol study and functional audio receiving.
 - [openairplay/goplay2](https://github.com/openairplay/goplay2) - `Open Source` `Free` · `AirPlay 2` — AirPlay 2 speaker implementation written in Go, useful for studying a smaller receiver codebase.
 - [Airplay.App](https://github.com/natsurainko/Airplay.App) - `Open Source` `Free` — Windows-focused AirPlay receiver with audio streaming, screen mirroring, and multi-device support.
@@ -78,7 +77,7 @@ Licensing, pricing and availability may change. Self-hosting and hardware can ha
 ## Screen Mirroring Receivers
 
 - [UxPlay](https://github.com/FDH2/UxPlay) - `Open Source` `Free` · `AirPlay 2 (Legacy)` — GStreamer receiver for Linux, macOS, BSD, and Windows. Supports legacy AirPlay 2 mirroring, audio, and limited YouTube HLS; not AirPlay 2 multiroom audio.
-- [RPiPlay](https://github.com/FD-/RPiPlay) - `Open Source` `Free` — AirPlay mirroring receiver originally optimized for Raspberry Pi hardware. Video is screen mirroring only.
+- [RPiPlay](https://github.com/FD-/RPiPlay) - `Open Source` `Free` — Raspberry Pi-oriented AirPlay receiver for H.264 screen mirroring with accompanying AAC audio; standalone AirPlay video playback is unsupported. Video is screen mirroring only.
 - [java-airplay-server](https://github.com/serezhka/java-airplay-server) - `Open Source` `Free` · `AirPlay 2` — Java AirPlay server that acts like an Apple TV for mirroring experiments.
 - [airplayreceiver](https://github.com/SteeBono/airplayreceiver) - `Open Source` `Free` · `AirPlay 2` — C# implementation of AirPlay 2 mirroring and audio protocol for testing across Windows, macOS, and Linux.
 - [AirPlay-Windows](https://github.com/moieric11/AirPlay-Windows) - `Free` · `AirPlay 2` — Native Windows AirPlay 2 receiver for mirroring and RAOP audio without Bonjour SDK or Apple runtime dependencies.
@@ -89,9 +88,10 @@ Licensing, pricing and availability may change. Self-hosting and hardware can ha
 
 - [TuneBlade](https://www.tuneblade.com/) - `Freemium` — Windows tray utility for streaming system-wide audio to AirPlay receivers, including Apple TV, AirPort Express, AirPlay speakers, and Shairport-based receivers.
 - [AirSend](https://github.com/Pabldi08/AirSend) - `Open Source` `Free` · `AirPlay 2` — Open-source Windows to HomePod AirPlay 2 audio sender written with Rust and Tauri.
+- [OwnTone](https://owntone.github.io/owntone-server/) - `Open Source` `Free` · `AirPlay 2` — Headless media server and AirPlay 1/2 sender for Linux, FreeBSD, and macOS; plays local files, Spotify, and internet radio to speakers with multiroom support.
 - [WinPlay](https://github.com/dineshdhotrad/WinPlay) - `Open Source` `Free` · `AirPlay 2` — GPL-3.0 Windows 10/11 sender for system audio to HomePods, stereo pairs, and multiroom groups; also offers H.264 screen mirroring to Apple TV (project-reported features).
 - [pyatv](https://pyatv.dev/) - `Open Source` `Free` · `RAOP` — Python library and CLI for discovery, RAOP audio, and video-by-URL; AirPlay 2 is used for pairing and remote control, not full AirPlay 2 audio streaming.
-- [Airfoil](https://rogueamoeba.com/airfoil/mac/) - `Paid` · `AirPlay 2` — Commercial macOS and Windows app for routing audio to AirPlay, Bluetooth, Chromecast, Sonos, and local outputs.
+- [Airfoil](https://rogueamoeba.com/airfoil/mac/) - `Paid` · `AirPlay 2` — Actively maintained macOS audio-routing app for AirPlay, Bluetooth, Chromecast, and Sonos. The Windows sender was retired in 2019; Windows Airfoil Satellite is receiver-only.
 - [AirParrot](https://www.airsquirrels.com/airparrot/) - `Paid` · `AirPlay 2` — Commercial desktop screen mirroring and media streaming app for sending to AirPlay, Google Cast, and Miracast receivers.
 
 ## Android
@@ -100,7 +100,7 @@ Licensing, pricing and availability may change. Self-hosting and hardware can ha
 - [AirScreen](https://www.airscreen.app/) - `Freemium` — Android receiver app for AirPlay, Google Cast, Miracast, and DLNA, commonly used on Android TV boxes and Fire TV devices.
 - [AirPin PRO](https://play.google.com/store/apps/details?id=com.waxrain.airplaydmr3) - `Paid` — Android AirPlay and DLNA receiver for phones, tablets, TV boxes, and projectors.
 - [AirReceiver](https://play.google.com/store/apps/details?id=com.softmedia.receiver) - `Paid` — Android TV and Android box receiver for AirPlay, Google Cast, wireless display, and DLNA.
-- [ScreenDock](https://github.com/tarek369/screendock) - `Open Source` `Freemium` — Open-source (GPLv3) AirPlay receiver for Android and Android TV, supporting screen mirroring, audio, and video. The Google Play version offers limited free sessions and an optional one-time Pro unlock.
+- [ScreenDock](https://github.com/tarek369/screendock) - `Open Source` `Freemium` — GPLv3 Android/Android TV receiver for screen mirroring, AirPlay audio, and video playback; streaming music is free, while the Play Store limits mirroring/video without the one-time Pro unlock.
 - [AirPlay Receiver for Android](https://github.com/jqssun/android-airplay-server) - `Open Source` `Free` · `AirPlay 2 (Legacy)` — GPL-3.0 UxPlay-based Android 7.0+ and Android TV receiver with audio, screen mirroring, and HLS video. Legacy-mode limitations apply; DRM content is unsupported.
 
 ## Related Streaming Technologies

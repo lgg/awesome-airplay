@@ -1,0 +1,148 @@
+# AirPlay Compatibility Matrix
+
+[Back to Awesome AirPlay](README.md) · [Contribution rules](CONTRIBUTING.md)
+
+This companion catalog covers **every resource listed in the README**. Capabilities below are based on linked upstream descriptions and are **not independently tested interoperability guarantees**. Editorial review: October 2026.
+
+## How to read the matrix
+
+- **✓** — capability documented or advertised upstream, not necessarily tested by this catalog.
+- **◐** — partial, experimental, or limited functionality; see Notes.
+- **?** — not documented or not verified; **not equivalent to unsupported**.
+- **—** — not offered in the documented role or not applicable; not an exhaustive negative test.
+- **Audio** is media-stream audio; **Mirroring** is real-time screen sharing; **Video** is standalone/HLS media playback, not mirroring. **Multiroom** requires coordinated playback across devices, not merely several independent streams.
+- **AirPlay 2** can mean audio, mirroring, pairing, or remote control. RAOP audio and AirPlay 2 pairing alone do *not* establish AirPlay 2 synchronized audio. Compatibility varies with OS, hardware, receiver, firmware and build options.
+
+## Streaming software, hardware and implementations
+
+### Audio receivers
+
+| Project | Platform | Protocol / mode | Audio | Mirroring | Video | Multiroom | Notes |
+| --- | --- | --- | :---: | :---: | :---: | :---: | --- |
+| [Shairport Sync](https://github.com/mikebrady/shairport-sync) | Linux / FreeBSD / OpenBSD | AirPlay 1 or 2 (build-dependent) | ✓ | — | — | ✓ | Receiver can participate in AirPlay 2 synchronized playback; build mode matters. |
+| [OwnTone](https://owntone.github.io/owntone-server/) | Linux / FreeBSD / macOS | AirPlay 1 / 2 | ✓ | — | — | ✓ | Media server and multi-output sender; sync and targets depend on receivers. |
+| [openairplay/airplay2-receiver](https://github.com/openairplay/airplay2-receiver) | Python | AirPlay 2 (experimental) | ◐ | — | — | ? | Protocol study, not a production-ready speaker. |
+| [openairplay/goplay2](https://github.com/openairplay/goplay2) | Go | AirPlay 2 (experimental) | ◐ | — | — | ? | Experimental speaker implementation. |
+| [Airplay.App](https://github.com/natsurainko/Airplay.App) | Windows | AirPlay (version unverified) | ✓ | ✓ | ? | ? | Version-specific behavior has not been independently verified. |
+
+### Screen mirroring receivers
+
+| Project | Platform | Protocol / mode | Audio | Mirroring | Video | Multiroom | Notes |
+| --- | --- | --- | :---: | :---: | :---: | :---: | --- |
+| [UxPlay](https://github.com/FDH2/UxPlay) | Linux / macOS / BSD / Windows | AirPlay 2 (legacy) | ✓ | ✓ | ◐ | — | YouTube HLS only; no AirPlay 2 multiroom audio. |
+| [RPiPlay](https://github.com/FD-/RPiPlay) | Raspberry Pi / other | AirPlay (version unverified) | ? | ✓ | — | — | Mirroring-focused receiver; media limitations vary. |
+| [java-airplay-server](https://github.com/serezhka/java-airplay-server) | Java / cross-platform | AirPlay 2 (project claim) | ✓ | ✓ | ? | — | Emulates an Apple TV for development and mirroring. |
+| [airplayreceiver](https://github.com/SteeBono/airplayreceiver) | C# / cross-platform | AirPlay 2 (project claim) | ✓ | ✓ | ? | — | Experimental AirPlay 2 mirroring and audio. |
+| [AirPlay-Windows](https://github.com/moieric11/AirPlay-Windows) | Windows | AirPlay 2 mirroring, RAOP audio | ✓ | ✓ | ? | — | Audio transport and mirroring mode differ. |
+| [AirGlass](https://github.com/jdkuk/AirGlass) | Windows | AirPlay (version unverified) | ✓ | ✓ | ? | — | Free full-screen viewing; paid floating window. |
+| [PiP](https://github.com/amitv87/PiP) | macOS | AirPlay (version unverified) | ? | ◐ | ? | — | Picture-in-picture AirPlay receiver; multiple sessions are not synchronized multiroom. |
+
+### Senders and desktop clients
+
+| Project | Platform | Protocol / mode | Audio | Mirroring | Video | Multiroom | Notes |
+| --- | --- | --- | :---: | :---: | :---: | :---: | --- |
+| [TuneBlade](https://www.tuneblade.com/) | Windows | AirPlay (version unverified) | ✓ | — | — | ? | System-wide audio sender; trial/free version may have restrictions. |
+| [AirSend](https://github.com/Pabldi08/AirSend) | Windows | AirPlay 2 (project claim) | ✓ | — | — | ? | HomePod-oriented sender. |
+| [WinPlay](https://github.com/dineshdhotrad/WinPlay) | Windows 10/11 | AirPlay 2 (project claim) | ✓ | ✓ | — | ✓ | Upstream claims ALAC system audio, stereo groups and H.264 mirroring to Apple TV. |
+| [pyatv](https://pyatv.dev/) | Python / CLI | RAOP for audio; AirPlay 2 control | ✓ | — | ✓ | — | Video by URL, not mirroring. Pairing/control is not AirPlay 2 audio transport. |
+| [Airfoil](https://rogueamoeba.com/airfoil/mac/) | macOS / Windows | AirPlay 1 / 2 | ✓ | — | — | ? | Routing desktop audio to multiple destinations; actual sync varies. |
+| [AirParrot](https://www.airsquirrels.com/airparrot/) | Windows / macOS | AirPlay and AirPlay 2 destinations | ✓ | ✓ | ? | ? | Mirroring/media sending; receiver compatibility does not prove AirPlay 2 multiroom. |
+
+### Android apps
+
+| Project | Platform | Protocol / mode | Audio | Mirroring | Video | Multiroom | Notes |
+| --- | --- | --- | :---: | :---: | :---: | :---: | --- |
+| [AirMusic](https://www.airmusic.app/portal/) | Android | AirPlay 1 / 2 | ✓ | — | — | ? | Uninterrupted audio requires payment. |
+| [AirScreen](https://www.airscreen.app/) | Android / Android TV | AirPlay (version unverified) | ✓ | ✓ | ? | — | Also supports Cast, Miracast, DLNA; free limits may apply. |
+| [AirPin PRO](https://play.google.com/store/apps/details?id=com.waxrain.airplaydmr3) | Android / Android TV | AirPlay (version unverified) | ✓ | ✓ | ? | — | Commercial receiver also supporting DLNA. |
+| [AirReceiver](https://play.google.com/store/apps/details?id=com.softmedia.receiver) | Android TV / boxes | AirPlay (version unverified) | ✓ | ✓ | ? | — | Also supports other wireless-display technologies. |
+| [ScreenDock](https://github.com/tarek369/screendock) | Android / Android TV | AirPlay (version unverified) | ✓ | ✓ | ? | — | Play Store variant offers a limited free mode. |
+| [AirPlay Receiver for Android](https://github.com/jqssun/android-airplay-server) | Android 7+ / Android TV | AirPlay 2 (UxPlay legacy) | ✓ | ✓ | ◐ | — | HLS available; no DRM; UxPlay legacy restrictions apply. |
+
+### Related, non-AirPlay streaming
+
+| Project | Platform | Protocol / mode | Audio | Mirroring | Video | Multiroom | Notes |
+| --- | --- | --- | :---: | :---: | :---: | :---: | --- |
+| [AriaCast Receiver](https://www.music-assistant.io/plugins/ariacast-receiver/) | Android to Music Assistant | AriaCast (not AirPlay) | ✓ | — | — | ? | Separate transport; not directly AirPlay-compatible. |
+
+### Bridges and relays
+
+| Project | Platform | Protocol / mode | Audio | Mirroring | Video | Multiroom | Notes |
+| --- | --- | --- | :---: | :---: | :---: | :---: | --- |
+| [AirConnect](https://github.com/philippe44/AirConnect) | Cross-platform bridge | AirPlay 1 / RAOP | ✓ | — | — | — | Exposes UPnP/Sonos/Chromecast targets as AirPlay speakers. |
+| [BabelPod](https://github.com/afaden/BabelPod) | Raspberry Pi | AirTunes / RAOP; AP2 not verified | ✓ | — | — | ? | Audio relay. Pinned dependencies do not prove complete AirPlay 2 support. |
+| [AirSonos](https://github.com/stephen/airsonos) | Node.js / Sonos | AirPlay 1 / RAOP | ✓ | — | — | — | Historical Sonos-to-AirPlay bridge. |
+
+### Commercial receivers
+
+| Project | Platform | Protocol / mode | Audio | Mirroring | Video | Multiroom | Notes |
+| --- | --- | --- | :---: | :---: | :---: | :---: | --- |
+| [AirServer](https://www.airserver.com/Overview) | Windows / macOS / Xbox / hardware | AirPlay (version unverified) | ✓ | ✓ | ? | ? | Commercial receiver; features depend on platform. |
+| [Reflector](https://www.airsquirrels.com/reflector) | Windows / macOS | AirPlay (version unverified) | ✓ | ✓ | ? | — | Emphasis on mirroring, recording and several simultaneous displays. |
+| [LonelyScreen](https://www.lonelyscreen.com/) | Windows / macOS | AirPlay (version unverified) | ? | ✓ | — | — | iPhone and iPad mirroring. |
+
+### Hardware and DIY
+
+| Project | Platform | Protocol / mode | Audio | Mirroring | Video | Multiroom | Notes |
+| --- | --- | --- | :---: | :---: | :---: | :---: | --- |
+| [rpi-audio-receiver](https://github.com/nicokaiser/rpi-audio-receiver) | Raspberry Pi / Linux | AirPlay 2 | ✓ | — | — | ? | DIY setup combining AirPlay 2, Bluetooth and Spotify Connect. |
+| [airplay-esp32](https://github.com/rbouteiller/airplay-esp32) | ESP32 / ESP32-S3 | AirPlay 2 (project claim) | ◐ | — | — | ? | Embedded experimental implementation with non-commercial licensing. |
+| [raspi-play](https://github.com/N8WM/raspi-play) | Raspberry Pi Zero 2 W | AirPlay 2 (tutorial) | ✓ | — | — | ? | Assembly instructions rather than one packaged app. |
+
+### Linux audio integration
+
+| Project | Platform | Protocol / mode | Audio | Mirroring | Video | Multiroom | Notes |
+| --- | --- | --- | :---: | :---: | :---: | :---: | --- |
+| [PipeWire RAOP Sink](https://man.archlinux.org/man/extra/pipewire-zeroconf/libpipewire-module-raop-sink.7.en) | Linux / PipeWire | AirPlay 1 / RAOP | ✓ | — | — | — | Linux module that sends RAOP audio. |
+| [PipeWire RAOP Discover](https://docs.pipewire.org/page_module_raop_discover.html) | Linux / PipeWire | RAOP discovery | — | — | — | — | Discovery component only, no audio by itself. |
+| [PipeWire AirPlay Toggle](https://extensions.gnome.org/extension/7652/pipewire-airplay-toggle/) | Linux / GNOME | RAOP discovery controls | — | — | — | — | Toggles another component, not a standalone sender. |
+| [PulseAudio RAOP Modules](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#module-raop-discover) | Linux / PulseAudio | AirPlay 1 / RAOP | ✓ | — | — | — | RAOP sink and discovery modules. |
+
+### Libraries and protocol implementations
+
+| Project | Platform | Protocol / mode | Audio | Mirroring | Video | Multiroom | Notes |
+| --- | --- | --- | :---: | :---: | :---: | :---: | --- |
+| [java-airplay-lib](https://github.com/serezhka/java-airplay-lib) | Java / cross-platform | AirPlay 2 (project claim) | ✓ | ✓ | ? | — | Library for building receivers; not a ready-to-run app. |
+| [node-appletv](https://github.com/evandcoleman/node-appletv) | Node.js | Apple TV control (not streaming) | — | — | — | — | Media Remote Protocol and control operations. |
+| [AirPlay SDK](https://github.com/xfirefly/Airplay-SDK) | Android / Windows SDK | AirPlay (version unverified) | ✓ | ✓ | ? | ? | Commercial SDK; licensing determines source availability. |
+| [apsdk-public](https://github.com/air-display/apsdk-public) | C++ / cross-platform | AirPlay (version unverified) | — | ✓ | ? | — | Video-oriented implementation; verify exact media modes upstream. |
+
+### Historical implementations
+
+| Project | Platform | Protocol / mode | Audio | Mirroring | Video | Multiroom | Notes |
+| --- | --- | --- | :---: | :---: | :---: | :---: | --- |
+| [ShairPort](https://github.com/abrasive/shairport) | Legacy cross-platform | AirPlay 1 / RAOP | ✓ | — | — | — | Historical AirPort Express emulator. |
+| [ShairPlay](https://github.com/juhovh/shairplay) | Legacy library | AirPlay 1 | ✓ | ? | ? | — | Early protocol implementation, not actively developed. |
+| [playfair](https://github.com/FD-/RPiPlay/tree/master/lib/playfair) | C library | FairPlay component, not streaming | — | — | — | — | Cryptographic building block, not an audio/video endpoint. |
+
+## Discovery, research, and other references
+
+These README entries are not themselves general-purpose streaming senders/receivers. Including them here ensures the main list and this reference stay synchronized without giving troubleshooting or documentation resources misleading media capability ticks.
+
+| Resource | README section | Why it is here |
+| --- | --- | --- |
+| [Avahi](https://www.avahi.org/) | Debugging and Discovery | mDNS/Zeroconf service discovery, not a media endpoint. |
+| [Bonjour Browser](https://www.tildesoft.com/) | Debugging and Discovery | Desktop DNS-SD browser used for diagnosis. |
+| [Discovery](https://apps.apple.com/us/app/discovery-dns-sd-browser/id305441017) | Debugging and Discovery | iOS/macOS DNS-SD browser for identifying advertised services. |
+| [Wireshark](https://www.wireshark.org/) | Debugging and Discovery | Packet analyzer for discovering AirPlay protocol issues. |
+| [tcpdump](https://www.tcpdump.org/) | Debugging and Discovery | Command-line packet capture for debugging. |
+| [Auto Accept AirPlay Requests](https://github.com/duddu/auto-accept-airplay-requests) | Debugging and Discovery | Trusted-local-network helper for receiver permission dialogs. |
+| [AirBorne by Oligo Security](https://www.oligo.security/blog/airborne) | Security Research | AirPlay vulnerability research and defensive analysis. |
+| [Apple Security Releases](https://support.apple.com/en-us/100100) | Security Research | Official vulnerability and patch tracking. |
+| [Apple Platform Security](https://support.apple.com/guide/security/welcome/web) | Security Research | Apple platform security documentation. |
+| [Protocol Prying](https://arxiv.org/abs/2606.26967) | Security Research | Reverse-engineering/fuzzing research on proximity protocols. |
+| [Emanuele Cozzi's AirPlay 2 Notes](https://emanuelecozzi.net/docs/airplay2/) | Protocol Notes | Unpublished-protocol reverse-engineering notes. |
+| [Unofficial AirPlay Protocol Specification](https://nto.github.io/AirPlay.html) | Protocol Notes | AirPlay and AirTunes specification reference. |
+| [pyatv AirPlay Stream Documentation](https://pyatv.dev/development/stream/) | Protocol Notes | Development documentation for streaming in pyatv. |
+| [Awesome Home Assistant](https://github.com/frenck/awesome-home-assistant) | Related Awesome Lists | Related resource collection, not a single receiver. |
+| [Awesome Self Hosted](https://github.com/awesome-selfhosted/awesome-selfhosted) | Related Awesome Lists | Related resource collection, not a single receiver. |
+| [Awesome Broadcasting](https://github.com/ebu/awesome-broadcasting) | Related Awesome Lists | Related resource collection, not a single receiver. |
+| [Awesome Audio Visualization](https://github.com/willianjusten/awesome-audio-visualization) | Related Awesome Lists | Related resource collection, not a single receiver. |
+
+## Maintenance
+
+**In every PR that adds, removes, renames, or changes a resource in the README, update this file in the same PR.** Add streaming software/hardware to the corresponding table with its documented protocol, platform, feature columns and known limitations. Non-streaming documentation, tools, security research, and related lists belong in the reference table.
+
+Consult primary documentation, license and releases where possible. Record limitations such as legacy modes, HLS-only video, DRM restrictions, build flags, and no multiroom. If unsure, use **?**; never infer the full AirPlay 2 feature set from a logo, product name, pairing support, or a claim of compatibility with an AirPlay 2 device.
+
+Run `node scripts/check-compatibility.mjs` after editing. It checks name/link coverage and tag limits but does **not** verify feature claims or upstream links.

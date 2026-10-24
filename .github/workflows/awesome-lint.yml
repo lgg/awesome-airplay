@@ -14,5 +14,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check README and compatibility matrix
+        run: node scripts/check-compatibility.mjs
+
       - name: Run awesome-lint
         run: npx awesome-lint

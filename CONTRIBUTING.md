@@ -7,10 +7,11 @@ Thanks for helping improve Awesome AirPlay.
 - Make sure the item is directly related to AirPlay, RAOP, AirPlay 2, AirPlay-compatible receivers, senders, bridges, debugging, or defensive security research.
 - Prefer projects that are maintained, documented, and useful to someone building or troubleshooting an AirPlay setup.
 - Add one link per pull request when possible.
+- **Update [COMPATIBILITY.md](COMPATIBILITY.md) in the same PR** whenever a README entry is added, removed, renamed, or its URL/capabilities change.
 - Use this format:
 
 ```md
-- [Name](https://example.com/) - `Open Source` `Free` — Short useful description.
+- [Name](https://example.com/) - `Open Source` `Free` · `AirPlay 2` — Short useful description.
 ```
 
 - Keep descriptions concise, neutral, and ending with a period.
@@ -33,7 +34,9 @@ Use the same inline-code labels and definitions as the [README](README.md#resour
 
 Place protocol and media labels after the licensing and pricing labels, for example `Open Source` `Free` `AirPlay 2` `Audio` `Video`.
 
-For applications and services, assign one pricing label (`Free`, `Freemium`, or `Paid`) when it can be verified, plus `Open Source` only when license evidence supports it. An open-source project with optional paid unlocks can have both `Open Source` and `Freemium`. Paid hosted offerings do not automatically make the self-hosted open-source software paid.
+For applications and services, assign one pricing label and include `Open Source` only if its license supports that claim. Optionally add **one** verified protocol label after a middle dot (` · `): `AirPlay 1`, `AirPlay 2`, `AirPlay 2 (Legacy)`, `RAOP`, or `Custom Protocol`. Use **at most three** inline-code labels (license, price, protocol). Functional labels like `Audio`, `Video`, `Multiroom`, `Screen Mirroring` and `Control` belong in prose and the matrix, not the compact README tag row.
+
+Distinguish AirPlay 2 streaming from legacy-mode support and AirPlay 2 pairing/control. Note limited HLS, DRM restrictions, audio-only, mirroring-only, and build/platform constraints in [COMPATIBILITY.md](COMPATIBILITY.md). When evidence is insufficient, use `?` in the matrix and omit the protocol badge in the README; unverified is not unsupported.
 
 For documentation, research, specifications, or tutorials, `Free` may be appropriate if the linked content is publicly accessible; do not apply `Open Source` merely because a webpage is readable. Do not label entries under Related Awesome Lists.
 
@@ -50,8 +53,11 @@ This is a curated list, not a complete directory. A good entry should answer at 
 
 ## Running Checks
 
-Run the linter before submitting:
+Run both checks before submitting:
 
 ```sh
+node scripts/check-compatibility.mjs
 npx awesome-lint
 ```
+
+The compatibility check ensures every README resource appears in the matrix with the same name/URL, without too many tags. It cannot prove the correctness of upstream claims.

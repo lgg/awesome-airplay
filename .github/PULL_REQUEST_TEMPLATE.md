@@ -16,7 +16,9 @@
 - [ ] The description explains why the resource is useful.
 - [ ] The description is concise, neutral, and ends with a period.
 - [ ] Commercial, experimental, or historical status is clear when relevant.
-- [ ] Resource labels use inline code (`Open Source`, `Free`, `Freemium`, `Paid`) and match the README definitions.
+- [ ] README labels are compact (up to three: license, pricing and one verified protocol; no separate feature badges).
 - [ ] `Open Source` is backed by a license; trial-only products are not mislabeled `Freemium`.
+- [ ] I updated `COMPATIBILITY.md` for added/removed/renamed entries, URLs or capability changes (or confirmed none changed).
+- [ ] Unknown features are marked `?`, not assumed from AirPlay 2 branding.
 - [ ] Any author, commercial, or affiliate connection is disclosed.
-- [ ] I ran `npx awesome-lint`.
+- [ ] I ran `node scripts/check-compatibility.mjs` and `npx awesome-lint`.

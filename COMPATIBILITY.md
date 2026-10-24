@@ -71,7 +71,6 @@ This companion catalog covers **every resource listed in the README**. Capabilit
 | --- | --- | --- | :---: | :---: | :---: | :---: | --- |
 | [AirConnect](https://github.com/philippe44/AirConnect) | Cross-platform bridge | AirPlay 1 / RAOP | ✓ | — | — | ◐ | Can target existing Sonos/Chromecast groups, but is not an AirPlay 2 synchronized-audio implementation. |
 | [BabelPod](https://github.com/afaden/BabelPod) | Raspberry Pi | AirTunes / RAOP; AP2 not verified | ✓ | — | — | ? | Audio relay. Pinned dependencies do not prove complete AirPlay 2 support. |
-| [AirSonos](https://github.com/stephen/airsonos) | Node.js / Sonos | AirPlay 1 / RAOP | ✓ | — | — | — | Historical Sonos-to-AirPlay bridge. |
 
 ### Commercial receivers
 
@@ -111,6 +110,7 @@ This companion catalog covers **every resource listed in the README**. Capabilit
 
 | Project | Platform | Protocol / mode | Audio | Mirroring | Video | Multiroom | Notes |
 | --- | --- | --- | :---: | :---: | :---: | :---: | --- |
+| [AirSonos](https://github.com/stephen/airsonos) | Node.js / Sonos | AirPlay 1 / RAOP | ✓ | — | — | — | Maintainer-archived legacy Sonos-to-AirPlay bridge, not for new installations. |
 | [ShairPort](https://github.com/abrasive/shairport) | Legacy cross-platform | AirPlay 1 / RAOP | ✓ | — | — | — | Historical AirPort Express emulator. |
 | [ShairPlay](https://github.com/juhovh/shairplay) | Legacy library | AirPlay 1 | ✓ | ? | ? | — | Early protocol implementation, not actively developed. |
 | [playfair](https://github.com/FD-/RPiPlay/tree/master/lib/playfair) | C library | FairPlay component, not streaming | — | — | — | — | Cryptographic building block, not an audio/video endpoint. |

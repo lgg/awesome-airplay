@@ -32,7 +32,7 @@ This companion catalog covers **every resource listed in the README**. Capabilit
 | [RPiPlay](https://github.com/FD-/RPiPlay) | Raspberry Pi / other | AirPlay (version unverified) | ✓ | ✓ | — | — | Receives AAC audio with mirrored H.264 screen; standalone video-by-URL playback not implemented. |
 | [java-airplay-server](https://github.com/serezhka/java-airplay-server) | Java / cross-platform | AirPlay 2 (project claim) | ✓ | ✓ | ? | — | Emulates an Apple TV for development and mirroring. |
 | [airplayreceiver](https://github.com/SteeBono/airplayreceiver) | C# / cross-platform | AirPlay 2 (project claim) | ✓ | ✓ | ? | — | Experimental AirPlay 2 mirroring and audio. |
-| [AirPlay-Windows](https://github.com/moieric11/AirPlay-Windows) | Windows | AirPlay 2 mirroring, RAOP audio | ✓ | ✓ | ? | — | Audio transport and mirroring mode differ. |
+| [AirPlay-Windows](https://github.com/moieric11/AirPlay-Windows) | Windows 10/11 x64 | AirPlay 2 mirroring, RAOP audio | ✓ | ✓ | ◐ | — | Standalone HLS is experimental and opt-in with `--hls-proxy-playback`; protected/DRM media unsupported. Audio uses RAOP AAC/ALAC. |
 | [AirGlass](https://github.com/jdkuk/AirGlass) | Windows | AirPlay (version unverified) | ✓ | ✓ | ? | — | Free full-screen viewing; paid floating window. |
 | [PiP](https://github.com/amitv87/PiP) | macOS | AirPlay (version unverified) | ? | ◐ | ? | — | Picture-in-picture AirPlay receiver; up to ten separate sessions does not equal synchronized multiroom. |
 
@@ -52,7 +52,7 @@ This companion catalog covers **every resource listed in the README**. Capabilit
 
 | Project | Platform | Protocol / mode | Audio | Mirroring | Video | Multiroom | Notes |
 | --- | --- | --- | :---: | :---: | :---: | :---: | --- |
-| [AirMusic](https://www.airmusic.app/portal/) | Android | AirPlay 1 / 2 | ✓ | — | — | ? | Uninterrupted audio requires payment. |
+| [AirMusic](https://www.airmusic.app/) | Android | AirPlay 1 / 2 | ✓ | — | — | ? | Uninterrupted audio requires payment. |
 | [AirScreen](https://www.airscreen.app/) | Android / Android TV | AirPlay (version unverified) | ✓ | ✓ | ? | — | Also supports Cast, Miracast, DLNA; free limits may apply. |
 | [AirPin PRO](https://play.google.com/store/apps/details?id=com.waxrain.airplaydmr3) | Android / Android TV | AirPlay (version unverified) | ✓ | ✓ | ? | — | Commercial receiver also supporting DLNA. |
 | [AirReceiver](https://play.google.com/store/apps/details?id=com.softmedia.receiver) | Android TV / boxes | AirPlay (version unverified) | ✓ | ✓ | ? | — | Also supports other wireless-display technologies. |

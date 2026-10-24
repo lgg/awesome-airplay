@@ -57,4 +57,4 @@ node scripts/check-compatibility.mjs
 npx --yes awesome-lint@2.3.0
 ```
 
-The compatibility check ensures every README resource appears in the matrix with the same name/URL, without too many tags. It cannot prove the correctness of upstream claims.
+The compatibility check verifies matching README/matrix names, URLs, sections, protocol badges versus documented modes, table shape, and label limits. It cannot independently prove upstream feature claims or availability.

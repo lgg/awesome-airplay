@@ -33,3 +33,16 @@ test('missing protocol separator detected',()=>fails(readme.replace(line,line.re
 test('malformed README entry detected',()=>fails(readme.replace(line,line.replace('[Shairport Sync]','[Shairport Sync')),matrix,'Malformed README'));
 test('duplicate README project detected',()=>fails(readme.replace(line,line+'\n'+line),matrix,'Duplicate README'));
 test('unknown reference category detected',()=>fails(readme,matrix.replace(ref,ref.replace('Debugging and Discovery','Somewhere else')),'Reference group invalid'));
+
+test('mismatched AirPlay 2 protocol label is rejected',()=>{
+  fails(readme,matrix.replace(row,row.replace('AirPlay 1 or 2 (build-dependent)','AirPlay 1 only')),'Protocol mismatch');
+});
+test('source protocol tag must agree with matrix',()=>{
+  fails(readme.replace(line,line.replace('`AirPlay 2`','`RAOP`')),matrix,'Protocol mismatch');
+});
+test('the catalog keeps the two Android senders',()=>{
+  for(const repo of ['https://github.com/g8row/centuryplay','https://github.com/MarcPelberg/android2apple4music']) {
+    assert.ok(readme.includes(repo),'README missing '+repo);
+    assert.ok(matrix.includes(repo),'COMPATIBILITY missing '+repo);
+  }
+});

@@ -19,6 +19,9 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Test compatibility checker
+        run: node --test tests/check-compatibility.test.mjs
+
       - name: Check README and compatibility matrix
         run: node scripts/check-compatibility.mjs
 

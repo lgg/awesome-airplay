@@ -28,7 +28,6 @@ For detailed protocol, audio, mirroring, video, multiroom and platform informati
 ## Contents
 
 - [Resource Labels](#resource-labels)
-- [Compatibility Matrix](COMPATIBILITY.md)
 - [Audio Receivers](#audio-receivers)
 - [Screen Mirroring Receivers](#screen-mirroring-receivers)
 - [Senders and Desktop Clients](#senders-and-desktop-clients)
@@ -47,17 +46,21 @@ For detailed protocol, audio, mirroring, video, multiroom and platform informati
 
 ## Resource Labels
 
-To keep the README scannable, use **at most three inline-code labels per resource**: licensing, pricing, and optionally **one verified protocol** (separated by a middle dot, `·`). List actual features in the description and [Compatibility Matrix](COMPATIBILITY.md), not as additional badges.
+To keep the README scannable, use **at most three inline-code labels per resource**: licensing, pricing, and optionally **one verified protocol** (separated by a middle dot, `·`). List actual features in the description and compatibility matrix, not as additional badges.
 
-- `Open Source`: Source code with an explicit open-source license; source-available alone is insufficient.
-- `Free`: Meaningful ongoing core use without payment.
-- `Freemium`: Meaningful ongoing free use with optional paid extras.
-- `Paid`: Meaningful ongoing use requires payment (trial-only is not freemium).
-- `AirPlay 1`: Documented original AirPlay/AirTunes implementation, including RAOP.
-- `AirPlay 2`: Documented AirPlay 2 capabilities; **not a promise** of multiroom, mirroring, video or full protocol coverage.
-- `AirPlay 2 (Legacy)`: AirPlay 2-era compatibility through a legacy mode with substantial limitations.
-- `RAOP`: RAOP audio transport where an AirPlay version label would be misleading.
-- `Custom Protocol`: Related but not AirPlay-compatible streaming protocol.
+`Open Source` — Source code with an explicit open-source license; source-available alone is insufficient.
+
+`Free` — Meaningful ongoing core use without payment.
+`Freemium` — Meaningful ongoing free use with optional paid extras.
+
+`Paid` — Meaningful ongoing use requires payment (trial-only is not freemium).
+`AirPlay 1` — Documented original AirPlay/AirTunes implementation, including RAOP.
+
+`AirPlay 2` — Documented AirPlay 2 capabilities; **not a promise** of multiroom, mirroring, video or full protocol coverage.
+`AirPlay 2 (Legacy)` — AirPlay 2-era compatibility through a legacy mode with substantial limitations.
+
+`RAOP` — RAOP audio transport where an AirPlay version label would be misleading.
+`Custom Protocol` — Related but not AirPlay-compatible streaming protocol.
 
 Only **one protocol label** is allowed. If a project supports multiple versions or uses AirPlay 2 only for pairing/control, explain that in its description and matrix. If the version is unclear, omit the protocol badge: unknown is not unsupported. Mirroring and standalone video playback are distinct capabilities.
 

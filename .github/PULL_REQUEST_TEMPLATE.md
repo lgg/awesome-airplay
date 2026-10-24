@@ -21,4 +21,4 @@
 - [ ] I updated `COMPATIBILITY.md` for added/removed/renamed entries, URLs or capability changes (or confirmed none changed).
 - [ ] Unknown features are marked `?`, not assumed from AirPlay 2 branding.
 - [ ] Any author, commercial, or affiliate connection is disclosed.
-- [ ] I ran `node scripts/check-compatibility.mjs` and `npx awesome-lint`.
+- [ ] I ran the Node regression tests, compatibility checker, and `awesome-lint` as documented in CONTRIBUTING.md.

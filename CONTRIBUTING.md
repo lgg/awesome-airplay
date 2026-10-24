@@ -29,6 +29,7 @@ Use the same inline-code labels and definitions as the [README](README.md#resour
 - `Free`: core functionality or the linked informational resource is freely available without payment.
 - `Freemium`: a meaningful free workflow is available, with optional paid features or usage limits.
 - `Paid`: meaningful ongoing use requires payment, even when a trial or preview is available.
+
 For applications and services, assign one pricing label and include `Open Source` only if its license supports that claim. Optionally add **one** verified protocol label after a middle dot (` · `): `AirPlay 1`, `AirPlay 2`, `AirPlay 2 (Legacy)`, `RAOP`, or `Custom Protocol`. Use **at most three** inline-code labels (license, price, protocol). Functional labels like `Audio`, `Video`, `Multiroom`, `Screen Mirroring` and `Control` belong in prose and the matrix, not the compact README tag row.
 
 Distinguish AirPlay 2 streaming from legacy-mode support and AirPlay 2 pairing/control. Note limited HLS, DRM restrictions, audio-only, mirroring-only, and build/platform constraints in [COMPATIBILITY.md](COMPATIBILITY.md). When evidence is insufficient, use `?` in the matrix and omit the protocol badge in the README; unverified is not unsupported.
@@ -51,8 +52,9 @@ This is a curated list, not a complete directory. A good entry should answer at 
 Run both checks before submitting:
 
 ```sh
+node --test tests/check-compatibility.test.mjs
 node scripts/check-compatibility.mjs
-npx awesome-lint
+npx --yes awesome-lint@2.3.0
 ```
 
 The compatibility check ensures every README resource appears in the matrix with the same name/URL, without too many tags. It cannot prove the correctness of upstream claims.

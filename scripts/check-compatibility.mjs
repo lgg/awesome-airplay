@@ -1,39 +1,103 @@
 #!/usr/bin/env node
-// Check that all README resources appear exactly once in COMPATIBILITY.md.
-import { readFileSync } from 'node:fs';
-const readme = readFileSync(new URL('../README.md', import.meta.url), 'utf8');
-const matrix = readFileSync(new URL('../COMPATIBILITY.md', import.meta.url), 'utf8');
-const readmeRows = [...readme.matchAll(/^- \[([^\]]+)\]\((https?:\/\/[^)]+)\) - (.+)$/gm)];
-const matrixRows = [...matrix.matchAll(/^\| \[([^\]]+)\]\((https?:\/\/[^)]+)\) \|/gm)];
-const errors = [];
-function index(rows, source) {
-  const map = new Map();
-  for (const [, name, url] of rows) {
-    if (map.has(name)) errors.push(source + ': duplicate entry ' + name);
-    map.set(name, url);
+import {readFileSync} from 'node:fs';
+import {pathToFileURL} from 'node:url';
+
+// README section -> COMPATIBILITY subsection. Deliberately explicit: new sections
+// must be registered here rather than silently escaping validation.
+const groupMap = new Map([
+  ['Audio Receivers','Audio receivers'],
+  ['Screen Mirroring Receivers','Screen mirroring receivers'],
+  ['Senders and Desktop Clients','Senders and desktop clients'],
+  ['Android','Android apps'],
+  ['Related Streaming Technologies','Related, non-AirPlay streaming'],
+  ['Bridges and Multiroom','Bridges and relays'],
+  ['Commercial Receivers','Commercial receivers'],
+  ['Hardware and DIY','Hardware and DIY'],
+  ['Linux Audio Stack','Linux audio integration'],
+  ['Libraries and Protocol Implementations','Libraries and protocol implementations'],
+  ['Historical Projects','Historical implementations']
+]);
+const referenceGroups = new Set(['Debugging and Discovery','Security Research','Protocol Notes','Related Awesome Lists']);
+const inverseGroups = new Map([...groupMap].map(([a,b])=>[b,a]));
+const prices = new Set(['Free','Freemium','Paid']);
+const protocols = new Set(['AirPlay 1','AirPlay 2','AirPlay 2 (Legacy)','RAOP','Custom Protocol']);
+const allowed = new Set(['Open Source',...prices,...protocols]);
+const flags = new Set(['✓','◐','?','—']);
+const entryRE = /^- \[([^\]]+)\]\((https?:\/\/[^)]+)\) - (.+)$/;
+const linkRE = /^\[([^\]]+)\]\((https?:\/\/[^)]+)\)$/;
+
+export function validate(readme, matrix) {
+  const issues = [];
+  let section = null;
+  const source = new Map();
+  for (const [index,line] of readme.split(/\r?\n/).entries()) {
+    const h = /^## (.+)$/.exec(line);
+    if (h) section = h[1];
+    if (!(groupMap.has(section) || referenceGroups.has(section)) || !line.startsWith('- ')) continue;
+    const m = entryRE.exec(line);
+    if (!m) { issues.push('Malformed README item at line '+(index+1)); continue; }
+    const [,name,url,body] = m;
+    if (source.has(name)) issues.push('Duplicate README entry: '+name);
+    source.set(name,{url,section});
+    if (section==='Related Awesome Lists') {
+      if (/\x60[^\x60]+\x60/.test(body)) issues.push('Badges on related awesome list: '+name);
+      continue;
+    }
+    const parts=body.split(' — ');
+    if (parts.length!==2 || !parts[1].trim()) { issues.push('Missing README description: '+name); continue; }
+    if (!parts[1].trim().endsWith('.')) issues.push('Missing final period: '+name);
+    const tags=[...parts[0].matchAll(/\x60([^\x60]+)\x60/g)].map(x=>x[1]);
+    if (tags.length>3) issues.push('Too many badges: '+name);
+    if (tags.some(x=>!allowed.has(x))) issues.push('Unknown badge: '+name);
+    if (tags.filter(x=>prices.has(x)).length!==1) issues.push('Pricing badge invalid: '+name);
+    if (tags.filter(x=>x==='Open Source').length>1) issues.push('Duplicate license badge: '+name);
+    if (tags.filter(x=>protocols.has(x)).length>1) issues.push('Multiple protocol badges: '+name);
+    if (tags.some(x=>protocols.has(x))!==parts[0].includes(' · ')) issues.push('Protocol separator: '+name);
   }
-  return map;
+  if (source.size===0) issues.push('README parsed no resources');
+  const target = new Map();
+  let subSection = null, reference = false;
+  for (const [index,line] of matrix.split(/\r?\n/).entries()) {
+    const h2=/^## (.+)$/.exec(line);
+    if (h2) { reference=h2[1]==='Discovery, research, and other references'; subSection=null; }
+    const h3=/^### (.+)$/.exec(line);
+    if (h3) subSection=h3[1];
+    if (!line.startsWith('| [')) continue;
+    const cells=line.split(/(?<!\\)\|/).slice(1,-1).map(x=>x.trim());
+    const m=linkRE.exec(cells[0]||'');
+    if (!m) { issues.push('Malformed matrix item at line '+(index+1)); continue; }
+    const [,name,url]=m;
+    if (target.has(name)) issues.push('Duplicate matrix entry: '+name);
+    const group=reference?cells[1]:inverseGroups.get(subSection);
+    target.set(name,{url,section:group});
+    if (reference) {
+      if(cells.length!==3) issues.push('Reference columns invalid: '+name);
+      if(!referenceGroups.has(cells[1])) issues.push('Reference group invalid: '+name);
+    } else {
+      if(!inverseGroups.has(subSection)) issues.push('Unknown matrix subsection: '+name);
+      if(cells.length!==8) issues.push('Streaming columns invalid: '+name);
+      if(cells.length===8) {
+        for(const value of cells.slice(3,7)) if(!flags.has(value)) issues.push('Invalid feature flag: '+name);
+        if(!cells[1]||!cells[2]||!cells[7]) issues.push('Missing matrix metadata: '+name);
+      }
+    }
+  }
+  if (target.size===0) issues.push('Matrix parsed no resources');
+  for(const [name,v] of source) {
+    const match=target.get(name);
+    if(!match) issues.push('Missing matrix resource: '+name);
+    else {
+      if(match.url!==v.url) issues.push('URL mismatch: '+name);
+      if(match.section!==v.section) issues.push('Section mismatch: '+name);
+    }
+  }
+  for(const name of target.keys()) if(!source.has(name)) issues.push('Extra matrix resource: '+name);
+  return issues;
 }
-const a = index(readmeRows, 'README');
-const b = index(matrixRows, 'COMPATIBILITY');
-for (const [name, url] of a) {
-  if (!b.has(name)) errors.push('Missing from matrix: ' + name);
-  else if (b.get(name) !== url) errors.push('URL mismatch: ' + name);
+if(process.argv[1] && pathToFileURL(process.argv[1]).href===import.meta.url) {
+  const readme=readFileSync(new URL('../README.md',import.meta.url),'utf8');
+  const matrix=readFileSync(new URL('../COMPATIBILITY.md',import.meta.url),'utf8');
+  const issues=validate(readme,matrix);
+  if(issues.length) { console.error('Compatibility audit failed:\n- '+issues.join('\n- ')); process.exitCode=1; }
+  else console.log('Compatibility audit passed: names, URLs, categories, table cells, feature flags and compact labels.');
 }
-for (const name of b.keys()) if (!a.has(name)) errors.push('Extra matrix resource: ' + name);
-const protocols = new Set(['AirPlay 1', 'AirPlay 2', 'AirPlay 2 (Legacy)', 'RAOP', 'Custom Protocol']);
-const prices = new Set(['Free', 'Freemium', 'Paid']);
-const allowed = new Set(['Open Source', ...prices, ...protocols]);
-for (const [, name, , rest] of readmeRows) {
-  const labels = [...rest.split(' — ')[0].matchAll(/\x60([^\x60]+)\x60/g)].map(m => m[1]);
-  if (labels.length > 3) errors.push(name + ': more than 3 README labels');
-  if (labels.filter(v => protocols.has(v)).length > 1) errors.push(name + ': multiple protocol labels');
-  if (labels.filter(v => prices.has(v)).length !== 1 && labels.length) errors.push(name + ': invalid pricing labels');
-  if (labels.some(v => !allowed.has(v))) errors.push(name + ': unsupported label');
-  if (labels.length && !rest.includes(' — ')) errors.push(name + ': missing description separator');
-}
-if (!readmeRows.length || !matrixRows.length) errors.push('Parser returned zero resources');
-if (errors.length) {
-  console.error('Compatibility validation failed:\n- ' + errors.join('\n- '));
-  process.exitCode = 1;
-} else console.log('Compatibility OK: ' + a.size + ' README entries indexed exactly once.');

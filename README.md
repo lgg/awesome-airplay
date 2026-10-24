@@ -1,3 +1,5 @@
+# Awesome AirPlay
+
 <p align="center">
   <img src="docs/assets/logo.png" alt="Awesome AirPlay Logo" width="200"/>
 </p>
@@ -16,8 +18,6 @@
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen" alt="PRs Welcome">
   </a>
 </p>
-
-# Awesome AirPlay
 
 > A curated list of AirPlay receivers, senders, bridges, libraries, protocol notes, debugging tools, and security research.
 
@@ -51,15 +51,19 @@ To keep the README scannable, use **at most three inline-code labels per resourc
 `Open Source` — Source code with an explicit open-source license; source-available alone is insufficient.
 
 `Free` — Meaningful ongoing core use without payment.
+
 `Freemium` — Meaningful ongoing free use with optional paid extras.
 
 `Paid` — Meaningful ongoing use requires payment (trial-only is not freemium).
+
 `AirPlay 1` — Documented original AirPlay/AirTunes implementation, including RAOP.
 
 `AirPlay 2` — Documented AirPlay 2 capabilities; **not a promise** of multiroom, mirroring, video or full protocol coverage.
+
 `AirPlay 2 (Legacy)` — AirPlay 2-era compatibility through a legacy mode with substantial limitations.
 
 `RAOP` — RAOP audio transport where an AirPlay version label would be misleading.
+
 `Custom Protocol` — Related but not AirPlay-compatible streaming protocol.
 
 Only **one protocol label** is allowed. If a project supports multiple versions or uses AirPlay 2 only for pairing/control, explain that in its description and matrix. If the version is unclear, omit the protocol badge: unknown is not unsupported. Mirroring and standalone video playback are distinct capabilities.

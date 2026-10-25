@@ -23,6 +23,8 @@ const prices = new Set(['Free','Freemium','Paid']);
 const protocols = new Set(['AirPlay 1','AirPlay 2','AirPlay 2 (Legacy)','RAOP','Custom Protocol']);
 const allowed = new Set(['Open Source',...prices,...protocols]);
 const flags = new Set(['✓','◐','?','—']);
+// Reviewed inventory snapshot: intentional additions/removals/renames update this file too.
+const reviewedCatalog = JSON.parse(readFileSync(new URL('../tests/catalog-baseline.json', import.meta.url), 'utf8'));
 const entryRE = /^- \[([^\]]+)\]\((https?:\/\/[^)]+)\) - (.+)$/;
 const linkRE = /^\[([^\]]+)\]\((https?:\/\/[^)]+)\)$/;
 
@@ -122,6 +124,20 @@ export function validate(readme, matrix) {
     }
   }
   for(const name of target.keys()) if(!source.has(name)) issues.push('Extra matrix resource: '+name);
+  // README and COMPATIBILITY.md may be edited together, concealing an accidental
+  // deletion or renaming. Independently track reviewed items in a committed baseline.
+  const approved = new Map();
+  for(const entry of reviewedCatalog) {
+    if(approved.has(entry.name)) issues.push('Duplicate catalog baseline entry: '+entry.name);
+    approved.set(entry.name,entry);
+    const match=source.get(entry.name);
+    if(!match) issues.push('Missing baseline resource: '+entry.name);
+    else {
+      if(match.url!==entry.url) issues.push('Baseline URL mismatch: '+entry.name);
+      if(match.section!==entry.section) issues.push('Baseline section mismatch: '+entry.name);
+    }
+  }
+  for(const name of source.keys()) if(!approved.has(name)) issues.push('Unreviewed catalog resource: '+name);
   return issues;
 }
 if(process.argv[1] && pathToFileURL(process.argv[1]).href===import.meta.url) {

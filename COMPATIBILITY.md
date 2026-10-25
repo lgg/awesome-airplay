@@ -45,7 +45,7 @@ This companion catalog covers **every resource listed in the README**. Capabilit
 | [OwnTone](https://owntone.github.io/owntone-server/) | Linux / FreeBSD / macOS | AirPlay 1 / 2 | ✓ | — | — | ✓ | Media server **sending** to AirPlay 1/2 speakers; supports synchronized multiroom playback. |
 | [WinPlay](https://github.com/dineshdhotrad/WinPlay) | Windows 10/11 | AirPlay 2 (project claim) | ✓ | ✓ | — | ✓ | Upstream claims ALAC system audio, stereo groups and H.264 mirroring to Apple TV. |
 | [pyatv](https://pyatv.dev/) | Python / CLI | RAOP for audio; AirPlay 2 control | ✓ | — | ✓ | — | Video by URL, not mirroring. Pairing/control is not AirPlay 2 audio transport. |
-| [Airfoil](https://rogueamoeba.com/airfoil/mac/) | macOS (current); Windows (retired) | AirPlay 1 / 2 | ✓ | — | — | ? | Windows sender [retired in 2019](https://rogueamoeba.com/airfoil/windows/); macOS version is maintained. Satellite for Windows is a receiver, not the sender. |
+| [Airfoil](https://rogueamoeba.com/airfoil/mac/) | macOS 14.4+ (v5.13); Windows sender retired | AirPlay 1 streaming to compatible AirPlay 2 hardware | ✓ | — | — | ✓ | Vendor documents AirPlay 1 connections and synchronized output to multiple devices (also Bluetooth/Chromecast); not native AirPlay 2 sender transport. macOS v5.13 fixed tvOS 27/HomePod OS 27 compatibility. Windows Airfoil Satellite is receiver-only. |
 | [AirParrot](https://www.airsquirrels.com/airparrot/) | Windows / macOS | AirPlay and AirPlay 2 destinations | ✓ | ✓ | ? | ? | Mirroring/media sending; receiver compatibility does not prove AirPlay 2 multiroom. |
 
 ### Android apps

@@ -70,8 +70,8 @@ Licensing, pricing and availability may change. Self-hosting and hardware can ha
 ## Audio Receivers
 
 - [Shairport Sync](https://github.com/mikebrady/shairport-sync) - `Open Source` `Free` · `AirPlay 2` — AirPlay 1/2 audio receiver for Linux, FreeBSD, macOS, and OpenBSD (protocol chosen at build time); includes metadata, synchronization, MQTT, and D-Bus integrations.
-- [openairplay/airplay2-receiver](https://github.com/openairplay/airplay2-receiver) - `Free` · `AirPlay 2` — Experimental Python AirPlay 2 receiver implementation for protocol study and functional audio receiving.
-- [openairplay/goplay2](https://github.com/openairplay/goplay2) - `Open Source` `Free` · `AirPlay 2` — AirPlay 2 speaker implementation written in Go, useful for studying a smaller receiver codebase.
+- [openairplay/airplay2-receiver](https://github.com/openairplay/airplay2-receiver) - `Free` · `AirPlay 2` — Experimental Python receiver for real-time and buffered AirPlay 2 audio (ALAC, AAC, OPUS and PCM); supports latency compensation but not accurate PTP/NTP synchronization.
+- [openairplay/goplay2](https://github.com/openairplay/goplay2) - `Open Source` `Free` · `AirPlay 2` — Go AirPlay 2 AAC speaker receiver with PTP and HomePod mini synchronization experiments; full multiroom audio sync and ALAC remain unfinished, and upstream development has been inactive since April 2023.
 - [Airplay.App](https://github.com/natsurainko/Airplay.App) - `Open Source` `Free` — Windows-focused AirPlay receiver with audio streaming, screen mirroring, and multi-device support.
 
 ## Screen Mirroring Receivers

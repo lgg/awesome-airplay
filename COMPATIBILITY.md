@@ -20,8 +20,8 @@ This companion catalog covers **every resource listed in the README**. Capabilit
 | Project | Platform | Protocol / mode | Audio | Mirroring | Video | Multiroom | Notes |
 | --- | --- | --- | :---: | :---: | :---: | :---: | --- |
 | [Shairport Sync](https://github.com/mikebrady/shairport-sync) | Linux / FreeBSD / macOS / OpenBSD | AirPlay 1 or 2 (build-dependent) | ✓ | — | — | ✓ | Audio receiver; AirPlay 2 mode and multiroom require the appropriate build and timing support. |
-| [openairplay/airplay2-receiver](https://github.com/openairplay/airplay2-receiver) | Python | AirPlay 2 (experimental) | ◐ | — | — | ? | Protocol study, not a production-ready speaker. |
-| [openairplay/goplay2](https://github.com/openairplay/goplay2) | Go | AirPlay 2 (experimental) | ◐ | — | — | ? | Experimental speaker implementation. |
+| [openairplay/airplay2-receiver](https://github.com/openairplay/airplay2-receiver) | Python (experimental) | AirPlay 2 realtime and buffered audio | ◐ | — | — | ◐ | Receives ALAC/AAC/OPUS/PCM and compensates output latency, but accurate PTP/NTP synchronization and FairPlay v2 are not implemented. Multiple connections are not proof of synchronized multiroom. |
+| [openairplay/goplay2](https://github.com/openairplay/goplay2) | Go / Linux and macOS builds | AirPlay 2 buffered AAC, PTP | ✓ | — | — | ◐ | Upstream documents working AAC playback, PTP and HomePod mini synchronization; full multiroom audio alignment is unfinished. ALAC/Spotify not supported. Last repository push: April 2023; current OS compatibility unverified. |
 | [Airplay.App](https://github.com/natsurainko/Airplay.App) | Windows | AirPlay (version unverified) | ✓ | ✓ | ? | ? | Version-specific behavior has not been independently verified. |
 
 ### Screen mirroring receivers

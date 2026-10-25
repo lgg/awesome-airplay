@@ -37,6 +37,15 @@ export function validate(readme, matrix) {
   // TOC anchors are user-facing navigation; confirm every section is linked
   // in the correct order, not merely that its resources appear in the index.
   const headings=[...readme.matchAll(/^## (.+)$/gm)].map(match=>match[1]);
+  const knownReadmeHeadings=new Set(['Contents','Resource Labels',...groupMap.keys(),...referenceGroups]);
+  const seenReadmeHeadings=new Set();
+  for(const name of headings){
+    if(seenReadmeHeadings.has(name)) issues.push('Duplicate README section heading: '+name);
+    if(!knownReadmeHeadings.has(name)) issues.push('Unregistered README section heading: '+name);
+    seenReadmeHeadings.add(name);
+  }
+  for(const name of knownReadmeHeadings)
+    if(!seenReadmeHeadings.has(name)) issues.push('Missing README section heading: '+name);
   const tocBlock=readme.split(/^## Contents\s*$/m)[1]?.split(/^## /m)[0];
   if (!tocBlock) issues.push('Missing README contents section');
   else {
@@ -95,14 +104,31 @@ export function validate(readme, matrix) {
   if (source.size===0) issues.push('README parsed no resources');
   const target = new Map();
   let subSection = null, reference = false;
+  const knownMatrixHeadings=new Set(['How to read the matrix','Streaming software, hardware and implementations','Discovery, research, and other references','Maintenance']);
+  const seenMatrixHeadings=new Set();
+  const seenMatrixSubsections=new Set();
   // A link row is only part of a rendered Markdown table while continuously
   // following its header and separator. Blank lines terminate tables.
   let tableState='outside';
   for (const [index,line] of matrix.split(/\r?\n/).entries()) {
     const h2=/^## (.+)$/.exec(line);
-    if (h2) { reference=h2[1]==='Discovery, research, and other references'; subSection=null; tableState='outside'; }
+    if (h2) {
+      const name=h2[1];
+      if(!knownMatrixHeadings.has(name)) issues.push('Unknown matrix section heading: '+name);
+      if(seenMatrixHeadings.has(name)) issues.push('Duplicate matrix section heading: '+name);
+      seenMatrixHeadings.add(name);
+      reference=name==='Discovery, research, and other references';
+      subSection=null;
+      tableState='outside';
+    }
     const h3=/^### (.+)$/.exec(line);
-    if (h3) { subSection=h3[1]; tableState='outside'; }
+    if (h3) {
+      subSection=h3[1];
+      if(!inverseGroups.has(subSection)) issues.push('Unknown matrix subsection heading: '+subSection);
+      if(seenMatrixSubsections.has(subSection)) issues.push('Duplicate matrix subsection heading: '+subSection);
+      seenMatrixSubsections.add(subSection);
+      tableState='outside';
+    }
     if (line.startsWith('| Project |') || line.startsWith('| Resource |')) {
       if (tableState==='awaiting-separator') issues.push('Missing matrix table separator at line '+(index+1));
       if (line !== (reference ? referenceHeader : streamHeader))
@@ -148,6 +174,10 @@ export function validate(readme, matrix) {
       }
     }
   }
+  for(const name of knownMatrixHeadings)
+    if(!seenMatrixHeadings.has(name)) issues.push('Missing matrix section heading: '+name);
+  for(const name of inverseGroups.keys())
+    if(!seenMatrixSubsections.has(name)) issues.push('Missing matrix subsection heading: '+name);
   if (target.size===0) issues.push('Matrix parsed no resources');
   for(const [name,v] of source) {
     const match=target.get(name);

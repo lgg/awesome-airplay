@@ -37,7 +37,7 @@ Do not apply a version badge to discovery-only modules or UI toggles which do no
 
 For documentation, research, specifications, or tutorials, `Free` may be appropriate if the linked content is publicly accessible; do not apply `Open Source` merely because a webpage is readable. Do not label entries under Related Awesome Lists.
 
-Check the project's licensing and pricing pages, official app-store listing, and/or repository license before claiming a label. If the information cannot be verified, omit the uncertain label rather than guessing. Mention important restrictions (such as non-commercial-only licenses or time-limited trials) in the description where useful. Do not treat a limited free trial as `Freemium` if meaningful ongoing usage requires payment.
+Check the project's licensing and pricing pages, official app-store listing, and/or repository license before claiming a label. If the information cannot be verified, omit the uncertain label rather than guessing. For partial multiroom support distinguish clock synchronization, actual coordinated playback and unfinished work; multiple sessions alone are not multiroom. Mention important restrictions (such as non-commercial-only licenses or time-limited trials) in the description where useful. Do not treat a limited free trial as `Freemium` if meaningful ongoing usage requires payment.
 
 ## Quality Bar
 
@@ -58,4 +58,4 @@ node scripts/check-compatibility.mjs
 npx --yes awesome-lint@2.3.0
 ```
 
-The compatibility check verifies matching README/matrix names and URLs against a separately committed inventory, flags duplicate URLs and unregistered resource sections or unsupported list markers, checks exact table headers/separators/row continuity, README contents anchors, badges and positive protocol claims. New resource sections must be added to the checker's category map. Tests cover malformed data as well as known recent entries. These checks cannot independently prove upstream feature claims, live link availability or hardware interoperability. For uncertain features, document the exact upstream claim and its limitations instead of guessing.
+The compatibility check verifies matching README/matrix names and URLs against a separately committed inventory, flags duplicate URLs and unregistered or duplicate section headings, unsupported list markers, exact table headers/separators/row continuity, README contents anchors, badges and positive protocol claims. New resource sections must be added to the checker's category map. Tests cover malformed data as well as known recent entries. These checks cannot independently prove upstream feature claims, live link availability or hardware interoperability. For uncertain features, document the exact upstream claim and its limitations instead of guessing.

@@ -179,3 +179,38 @@ test('approved inventory scales with intentional new entries',()=>{
   assert.ok(catalog.some(x=>x.name==='Android2Apple4Music'));
   assert.ok(catalog.some(x=>x.name==='centuryplay'));
 });
+
+
+test('readme table of contents must retain every section',()=>{
+  const listLine='- [Android](#android)';
+  assert.ok(readme.includes(listLine));
+  fails(readme.replace(listLine+'\n',''),matrix,'README contents');
+});
+test('readme table of contents links must point to correct anchors',()=>{
+  fails(readme.replace('- [Android](#android)','- [Android](#android-apps)'),matrix,'README contents heading or anchor mismatch');
+});
+test('readme table of contents follows section order',()=>{
+  const a='- [Audio Receivers](#audio-receivers)';
+  const b='- [Screen Mirroring Receivers](#screen-mirroring-receivers)';
+  assert.ok(readme.includes(a+'\n'+b));
+  fails(readme.replace(a+'\n'+b,b+'\n'+a),matrix,'README contents heading or anchor mismatch');
+});
+test('streaming matrix must retain exact eight-column headers',()=>{
+  const original='| Project | Platform | Protocol / mode | Audio | Mirroring | Video | Multiroom | Notes |';
+  fails(readme,matrix.replace(original,'| Project | Platform | Protocol / mode | Audio | Mirroring | Video | Notes |'),'Matrix table header mismatch');
+});
+test('streaming table divider must retain eight columns and alignment',()=>{
+  const original='| --- | --- | --- | :---: | :---: | :---: | :---: | --- |';
+  fails(readme,matrix.replace(original,'| --- | --- | --- | --- | --- | --- | --- | --- |'),'Matrix table divider mismatch');
+});
+test('reference table header must retain its dedicated column labels',()=>{
+  const original='| Resource | README section | Why it is here |';
+  fails(readme,matrix.replace(original,'| Resource | README section | Wrong label |'),'Matrix table header mismatch');
+});
+test('reference table divider must retain exactly three columns',()=>{
+  const i=matrix.indexOf('| Resource | README section | Why it is here |');
+  assert.ok(i>=0);
+  const before=matrix.slice(0,i),after=matrix.slice(i);
+  const original='| --- | --- | --- |';
+  fails(readme,before+after.replace(original,'| --- | --- | --- | --- |'),'Matrix table divider mismatch');
+});

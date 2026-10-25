@@ -23,6 +23,10 @@ const prices = new Set(['Free','Freemium','Paid']);
 const protocols = new Set(['AirPlay 1','AirPlay 2','AirPlay 2 (Legacy)','RAOP','Custom Protocol']);
 const allowed = new Set(['Open Source',...prices,...protocols]);
 const flags = new Set(['✓','◐','?','—']);
+const streamHeader = '| Project | Platform | Protocol / mode | Audio | Mirroring | Video | Multiroom | Notes |';
+const streamDivider = '| --- | --- | --- | :---: | :---: | :---: | :---: | --- |';
+const referenceHeader = '| Resource | README section | Why it is here |';
+const referenceDivider = '| --- | --- | --- |';
 // Reviewed inventory snapshot: intentional additions/removals/renames update this file too.
 const reviewedCatalog = JSON.parse(readFileSync(new URL('../tests/catalog-baseline.json', import.meta.url), 'utf8'));
 const entryRE = /^- \[([^\]]+)\]\((https?:\/\/[^)]+)\) - (.+)$/;
@@ -30,6 +34,19 @@ const linkRE = /^\[([^\]]+)\]\((https?:\/\/[^)]+)\)$/;
 
 export function validate(readme, matrix) {
   const issues = [];
+  // TOC anchors are user-facing navigation; confirm every section is linked
+  // in the correct order, not merely that its resources appear in the index.
+  const headings=[...readme.matchAll(/^## (.+)$/gm)].map(match=>match[1]);
+  const tocBlock=readme.split(/^## Contents\s*$/m)[1]?.split(/^## /m)[0];
+  if (!tocBlock) issues.push('Missing README contents section');
+  else {
+    const listed=tocBlock.split(/\r?\n/).filter(line=>line.startsWith('- ['));
+    const expected=headings.filter(name=>name!=='Contents')
+      .map(name=>'- ['+name+'](#'+name.toLowerCase().replace(/[^a-z0-9 -]/g,'').trim().replace(/\s+/g,'-')+')');
+    if (listed.length!==expected.length) issues.push('README contents length mismatch');
+    for (let i=0;i<expected.length;i++) if(listed[i]!==expected[i])
+      issues.push('README contents heading or anchor mismatch: '+headings.filter(name=>name!=='Contents')[i]);
+  }
   let section = null;
   const source = new Map();
   const sourceUrls = new Map();
@@ -88,11 +105,18 @@ export function validate(readme, matrix) {
     if (h3) { subSection=h3[1]; tableState='outside'; }
     if (line.startsWith('| Project |') || line.startsWith('| Resource |')) {
       if (tableState==='awaiting-separator') issues.push('Missing matrix table separator at line '+(index+1));
+      if (line !== (reference ? referenceHeader : streamHeader))
+        issues.push('Matrix table header mismatch at line '+(index+1));
       tableState='awaiting-separator';
       continue;
     }
     if (tableState==='awaiting-separator') {
-      if (/^\|(?:\s*:?-{3,}:?\s*\|){3,}$/.test(line)) { tableState='rows'; continue; }
+      if (/^\|(?:\s*:?-{3,}:?\s*\|){3,}$/.test(line)) {
+        if (line !== (reference ? referenceDivider : streamDivider))
+          issues.push('Matrix table divider mismatch at line '+(index+1));
+        tableState='rows';
+        continue;
+      }
       issues.push('Missing matrix table separator at line '+(index+1));
       tableState='outside';
     }

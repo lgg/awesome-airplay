@@ -19,6 +19,7 @@
 - [ ] README labels are compact (up to three: license, pricing and one verified protocol; no separate feature badges).
 - [ ] `Open Source` is backed by a license; trial-only products are not mislabeled `Freemium`.
 - [ ] I updated `COMPATIBILITY.md` for added/removed/renamed entries, URLs or capability changes (or confirmed none changed).
+- [ ] For any intentional inventory/URL/category changes, I also updated `tests/catalog-baseline.json` (not required for capability-only changes).
 - [ ] Unknown features are marked `?`, not assumed from AirPlay 2 branding; README protocol badges match the matrix's documented protocol/mode.
 - [ ] Any author, commercial, or affiliate connection is disclosed.
 - [ ] I ran the Node regression tests, compatibility checker, and `awesome-lint` as documented in CONTRIBUTING.md.

@@ -1,0 +1,317 @@
+[
+  {
+    "name": "AirBorne by Oligo Security",
+    "url": "https://www.oligo.security/blog/airborne",
+    "section": "Security Research"
+  },
+  {
+    "name": "AirConnect",
+    "url": "https://github.com/philippe44/AirConnect",
+    "section": "Bridges and Multiroom"
+  },
+  {
+    "name": "Airfoil",
+    "url": "https://rogueamoeba.com/airfoil/mac/",
+    "section": "Senders and Desktop Clients"
+  },
+  {
+    "name": "AirGlass",
+    "url": "https://github.com/jdkuk/AirGlass",
+    "section": "Screen Mirroring Receivers"
+  },
+  {
+    "name": "AirMusic",
+    "url": "https://www.airmusic.app/",
+    "section": "Android"
+  },
+  {
+    "name": "AirParrot",
+    "url": "https://www.airsquirrels.com/airparrot/",
+    "section": "Senders and Desktop Clients"
+  },
+  {
+    "name": "AirPin PRO",
+    "url": "https://play.google.com/store/apps/details?id=com.waxrain.airplaydmr3",
+    "section": "Android"
+  },
+  {
+    "name": "AirPlay Receiver for Android",
+    "url": "https://github.com/jqssun/android-airplay-server",
+    "section": "Android"
+  },
+  {
+    "name": "AirPlay SDK",
+    "url": "https://github.com/xfirefly/Airplay-SDK",
+    "section": "Libraries and Protocol Implementations"
+  },
+  {
+    "name": "airplay-esp32",
+    "url": "https://github.com/rbouteiller/airplay-esp32",
+    "section": "Hardware and DIY"
+  },
+  {
+    "name": "AirPlay-Windows",
+    "url": "https://github.com/moieric11/AirPlay-Windows",
+    "section": "Screen Mirroring Receivers"
+  },
+  {
+    "name": "Airplay.App",
+    "url": "https://github.com/natsurainko/Airplay.App",
+    "section": "Audio Receivers"
+  },
+  {
+    "name": "airplayreceiver",
+    "url": "https://github.com/SteeBono/airplayreceiver",
+    "section": "Screen Mirroring Receivers"
+  },
+  {
+    "name": "AirReceiver",
+    "url": "https://play.google.com/store/apps/details?id=com.softmedia.receiver",
+    "section": "Android"
+  },
+  {
+    "name": "AirScreen",
+    "url": "https://www.airscreen.app/",
+    "section": "Android"
+  },
+  {
+    "name": "AirSend",
+    "url": "https://github.com/Pabldi08/AirSend",
+    "section": "Senders and Desktop Clients"
+  },
+  {
+    "name": "AirServer",
+    "url": "https://www.airserver.com/Overview",
+    "section": "Commercial Receivers"
+  },
+  {
+    "name": "AirSonos",
+    "url": "https://github.com/stephen/airsonos",
+    "section": "Historical Projects"
+  },
+  {
+    "name": "Android2Apple4Music",
+    "url": "https://github.com/MarcPelberg/android2apple4music",
+    "section": "Historical Projects"
+  },
+  {
+    "name": "Apple Platform Security",
+    "url": "https://support.apple.com/guide/security/welcome/web",
+    "section": "Security Research"
+  },
+  {
+    "name": "Apple Security Releases",
+    "url": "https://support.apple.com/en-us/100100",
+    "section": "Security Research"
+  },
+  {
+    "name": "apsdk-public",
+    "url": "https://github.com/air-display/apsdk-public",
+    "section": "Libraries and Protocol Implementations"
+  },
+  {
+    "name": "AriaCast Receiver",
+    "url": "https://www.music-assistant.io/plugins/ariacast-receiver/",
+    "section": "Related Streaming Technologies"
+  },
+  {
+    "name": "Auto Accept AirPlay Requests",
+    "url": "https://github.com/duddu/auto-accept-airplay-requests",
+    "section": "Debugging and Discovery"
+  },
+  {
+    "name": "Avahi",
+    "url": "https://www.avahi.org/",
+    "section": "Debugging and Discovery"
+  },
+  {
+    "name": "Awesome Audio Visualization",
+    "url": "https://github.com/willianjusten/awesome-audio-visualization",
+    "section": "Related Awesome Lists"
+  },
+  {
+    "name": "Awesome Broadcasting",
+    "url": "https://github.com/ebu/awesome-broadcasting",
+    "section": "Related Awesome Lists"
+  },
+  {
+    "name": "Awesome Home Assistant",
+    "url": "https://github.com/frenck/awesome-home-assistant",
+    "section": "Related Awesome Lists"
+  },
+  {
+    "name": "Awesome Self Hosted",
+    "url": "https://github.com/awesome-selfhosted/awesome-selfhosted",
+    "section": "Related Awesome Lists"
+  },
+  {
+    "name": "BabelPod",
+    "url": "https://github.com/afaden/BabelPod",
+    "section": "Bridges and Multiroom"
+  },
+  {
+    "name": "centuryplay",
+    "url": "https://github.com/g8row/centuryplay",
+    "section": "Android"
+  },
+  {
+    "name": "Discovery for iPhone",
+    "url": "https://apps.apple.com/us/app/discovery-dns-sd-browser/id305441017",
+    "section": "Debugging and Discovery"
+  },
+  {
+    "name": "Discovery for macOS",
+    "url": "https://apps.apple.com/us/app/discovery-dns-sd-browser/id1381004916",
+    "section": "Debugging and Discovery"
+  },
+  {
+    "name": "Emanuele Cozzi's AirPlay 2 Notes",
+    "url": "https://emanuelecozzi.net/docs/airplay2/",
+    "section": "Protocol Notes"
+  },
+  {
+    "name": "java-airplay-lib",
+    "url": "https://github.com/serezhka/java-airplay-lib",
+    "section": "Libraries and Protocol Implementations"
+  },
+  {
+    "name": "java-airplay-server",
+    "url": "https://github.com/serezhka/java-airplay-server",
+    "section": "Screen Mirroring Receivers"
+  },
+  {
+    "name": "LonelyScreen",
+    "url": "https://www.lonelyscreen.com/",
+    "section": "Commercial Receivers"
+  },
+  {
+    "name": "node-appletv",
+    "url": "https://github.com/evandcoleman/node-appletv",
+    "section": "Libraries and Protocol Implementations"
+  },
+  {
+    "name": "openairplay/airplay2-receiver",
+    "url": "https://github.com/openairplay/airplay2-receiver",
+    "section": "Audio Receivers"
+  },
+  {
+    "name": "openairplay/goplay2",
+    "url": "https://github.com/openairplay/goplay2",
+    "section": "Audio Receivers"
+  },
+  {
+    "name": "OwnTone",
+    "url": "https://owntone.github.io/owntone-server/",
+    "section": "Senders and Desktop Clients"
+  },
+  {
+    "name": "PiP",
+    "url": "https://github.com/amitv87/PiP",
+    "section": "Screen Mirroring Receivers"
+  },
+  {
+    "name": "PipeWire AirPlay Toggle",
+    "url": "https://extensions.gnome.org/extension/7652/pipewire-airplay-toggle/",
+    "section": "Linux Audio Stack"
+  },
+  {
+    "name": "PipeWire RAOP Discover",
+    "url": "https://docs.pipewire.org/page_module_raop_discover.html",
+    "section": "Linux Audio Stack"
+  },
+  {
+    "name": "PipeWire RAOP Sink",
+    "url": "https://man.archlinux.org/man/extra/pipewire-zeroconf/libpipewire-module-raop-sink.7.en",
+    "section": "Linux Audio Stack"
+  },
+  {
+    "name": "playfair",
+    "url": "https://github.com/FD-/RPiPlay/tree/master/lib/playfair",
+    "section": "Historical Projects"
+  },
+  {
+    "name": "PulseAudio RAOP Modules",
+    "url": "https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#module-raop-discover",
+    "section": "Linux Audio Stack"
+  },
+  {
+    "name": "pyatv",
+    "url": "https://pyatv.dev/",
+    "section": "Senders and Desktop Clients"
+  },
+  {
+    "name": "pyatv AirPlay Stream Documentation",
+    "url": "https://pyatv.dev/development/stream/",
+    "section": "Protocol Notes"
+  },
+  {
+    "name": "raspi-play",
+    "url": "https://github.com/N8WM/raspi-play",
+    "section": "Hardware and DIY"
+  },
+  {
+    "name": "Reflector",
+    "url": "https://www.airsquirrels.com/reflector",
+    "section": "Commercial Receivers"
+  },
+  {
+    "name": "rpi-audio-receiver",
+    "url": "https://github.com/nicokaiser/rpi-audio-receiver",
+    "section": "Hardware and DIY"
+  },
+  {
+    "name": "RPiPlay",
+    "url": "https://github.com/FD-/RPiPlay",
+    "section": "Screen Mirroring Receivers"
+  },
+  {
+    "name": "ScreenDock",
+    "url": "https://github.com/tarek369/screendock",
+    "section": "Android"
+  },
+  {
+    "name": "ShairPlay",
+    "url": "https://github.com/juhovh/shairplay",
+    "section": "Historical Projects"
+  },
+  {
+    "name": "ShairPort",
+    "url": "https://github.com/abrasive/shairport",
+    "section": "Historical Projects"
+  },
+  {
+    "name": "Shairport Sync",
+    "url": "https://github.com/mikebrady/shairport-sync",
+    "section": "Audio Receivers"
+  },
+  {
+    "name": "tcpdump",
+    "url": "https://www.tcpdump.org/",
+    "section": "Debugging and Discovery"
+  },
+  {
+    "name": "TuneBlade",
+    "url": "https://www.tuneblade.com/",
+    "section": "Senders and Desktop Clients"
+  },
+  {
+    "name": "Unofficial AirPlay Protocol Specification",
+    "url": "https://nto.github.io/AirPlay.html",
+    "section": "Protocol Notes"
+  },
+  {
+    "name": "UxPlay",
+    "url": "https://github.com/FDH2/UxPlay",
+    "section": "Screen Mirroring Receivers"
+  },
+  {
+    "name": "WinPlay",
+    "url": "https://github.com/dineshdhotrad/WinPlay",
+    "section": "Senders and Desktop Clients"
+  },
+  {
+    "name": "Wireshark",
+    "url": "https://www.wireshark.org/",
+    "section": "Debugging and Discovery"
+  }
+]

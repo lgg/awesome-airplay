@@ -89,3 +89,36 @@ test('both Discovery App Store IDs are kept distinct',()=>{
     assert.ok(matrix.includes(url),'COMPATIBILITY missing '+url);
   }
 });
+
+
+test('baseline locks all 63 current resources independently from the matrix',()=>{
+  const baseline=JSON.parse(readFileSync(new URL('./catalog-baseline.json',import.meta.url),'utf8'));
+  assert.equal(baseline.length,63);
+  const urls=new Set(baseline.map(x=>x.url));
+  const names=new Set(baseline.map(x=>x.name));
+  assert.equal(urls.size,63);
+  assert.equal(names.size,63);
+  assert.ok(names.has('centuryplay'));
+  assert.ok(names.has('Android2Apple4Music'));
+});
+test('synchronized deletion from README and matrix cannot bypass baseline',()=>{
+  const changedReadme=readme.replace(line+'\n','');
+  const changedMatrix=matrix.replace(row+'\n','');
+  fails(changedReadme,changedMatrix,'Missing baseline resource: Shairport Sync');
+});
+test('synchronized resource rename cannot bypass baseline',()=>{
+  const changedReadme=readme.replace(line,line.replace('[Shairport Sync]','[Shairport Legacy Rename]'));
+  const changedMatrix=matrix.replace(row,row.replace('[Shairport Sync]','[Shairport Legacy Rename]'));
+  fails(changedReadme,changedMatrix,'Missing baseline resource: Shairport Sync');
+  fails(changedReadme,changedMatrix,'Unreviewed catalog resource: Shairport Legacy Rename');
+});
+test('changed URL in both documents cannot bypass baseline',()=>{
+  const changedReadme=readme.replace('https://github.com/mikebrady/shairport-sync','https://github.com/mikebrady/shairport-sync-new');
+  const changedMatrix=matrix.replace('https://github.com/mikebrady/shairport-sync','https://github.com/mikebrady/shairport-sync-new');
+  fails(changedReadme,changedMatrix,'Baseline URL mismatch: Shairport Sync');
+});
+test('misclassified resource in both documents cannot bypass baseline',()=>{
+  const readmeWrong=readme.replace(line+'\n','').replace('## Screen Mirroring Receivers\n','## Screen Mirroring Receivers\n\n'+line+'\n');
+  const matrixWrong=matrix.replace(row+'\n','').replace('### Screen mirroring receivers\n','### Screen mirroring receivers\n\n'+row+'\n');
+  fails(readmeWrong,matrixWrong,'Baseline section mismatch: Shairport Sync');
+});

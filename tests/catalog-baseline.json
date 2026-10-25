@@ -121,7 +121,7 @@
   },
   {
     "name": "Avahi",
-    "url": "https://www.avahi.org/",
+    "url": "https://github.com/avahi/avahi",
     "section": "Debugging and Discovery"
   },
   {

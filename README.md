@@ -141,7 +141,7 @@ Licensing, pricing and availability may change. Self-hosting and hardware can ha
 
 ## Debugging and Discovery
 
-- [Avahi](https://www.avahi.org/) - `Open Source` `Free` — Zeroconf and mDNS implementation used on Linux to discover AirPlay and RAOP services.
+- [Avahi](https://github.com/avahi/avahi) - `Open Source` `Free` — Official LGPL-2.1 Linux mDNS/DNS-SD (Bonjour-compatible) implementation for discovering AirPlay and RAOP services.
 - [Discovery for macOS](https://apps.apple.com/us/app/discovery-dns-sd-browser/id1381004916) - `Free` — macOS DNS-SD browser (successor to Bonjour Browser) for inspecting AirPlay, RAOP, and other advertised network services.
 - [Discovery for iPhone](https://apps.apple.com/us/app/discovery-dns-sd-browser/id305441017) - `Free` — iPhone-only App Store listing for a Bonjour/DNS-SD browser used to inspect AirPlay, RAOP and other advertised services.
 - [Wireshark](https://www.wireshark.org/) - `Open Source` `Free` — Packet analyzer for inspecting mDNS, RTSP, RTP, HTTP, and TLS traffic around AirPlay sessions.

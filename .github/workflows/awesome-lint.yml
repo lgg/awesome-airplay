@@ -22,11 +22,14 @@ jobs:
         with:
           node-version: '24'
 
-      - name: Test compatibility checker
-        run: node --test tests/check-compatibility.test.mjs
+      - name: Run Node regression tests
+        run: node --test tests/*.test.mjs
 
       - name: Check README and compatibility matrix
         run: node scripts/check-compatibility.mjs
+
+      - name: Check local file and image links
+        run: node scripts/check-local-links.mjs
 
       - name: Run awesome-lint
         run: npx --yes awesome-lint@2.3.0

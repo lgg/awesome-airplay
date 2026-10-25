@@ -23,4 +23,4 @@
 - [ ] For any intentional inventory/URL/category changes, I also updated `tests/catalog-baseline.json` (not required for capability-only changes).
 - [ ] Unknown features are marked `?`, not assumed from AirPlay 2 branding; README protocol badges match the matrix's documented protocol/mode.
 - [ ] Any author, commercial, or affiliate connection is disclosed.
-- [ ] I ran the Node regression tests, compatibility checker, and `awesome-lint` as documented in CONTRIBUTING.md.
+- [ ] I ran the Node regression tests, compatibility and local-link checkers, and `awesome-lint` as documented in CONTRIBUTING.md.

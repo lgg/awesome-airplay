@@ -214,3 +214,42 @@ test('reference table divider must retain exactly three columns',()=>{
   const original='| --- | --- | --- |';
   fails(readme,before+after.replace(original,'| --- | --- | --- | --- |'),'Matrix table divider mismatch');
 });
+
+
+test('duplicate README resource sections fail even when catalog entries are unchanged',()=>{
+  const marker='## Audio Receivers';
+  fails(readme.replace(marker,marker+'\n\n'+marker),matrix,'Duplicate README section heading');
+});
+test('unregistered README headings fail even when the heading has no entries',()=>{
+  const marker='## Audio Receivers';
+  fails(readme.replace(marker,'## Extra Receivers\n\n'+marker),matrix,'Unregistered README section heading');
+});
+test('missing empty README headings fail',()=>{
+  fails(readme.replace('## Resource Labels','### Resource Labels'),matrix,'Missing README section heading: Resource Labels');
+});
+test('unknown matrix subsection headings fail when they have no rows',()=>{
+  const marker='### Android apps';
+  fails(readme,matrix.replace(marker,'### Unreviewed Devices\n\n'+marker),'Unknown matrix subsection heading');
+});
+test('duplicated matrix subsection headings fail without requiring new rows',()=>{
+  const marker='### Android apps';
+  fails(readme,matrix.replace(marker,marker+'\n\n'+marker),'Duplicate matrix subsection heading');
+});
+test('missing matrix subsection headings fail even if the heading has no rows',()=>{
+  const marker='### Android apps';
+  fails(readme,matrix.replace(marker,''),'Missing matrix subsection heading: Android apps');
+});
+test('matrix rejects unknown and duplicated top-level headings',()=>{
+  const marker='## Maintenance';
+  fails(readme,matrix.replace(marker,'## Unknown Maintenance\n\n'+marker),'Unknown matrix section heading');
+  fails(readme,matrix.replace(marker,marker+'\n\n'+marker),'Duplicate matrix section heading');
+});
+test('partial multiroom flags explain exact sync limitations for experimental receivers',()=>{
+  for(const name of ['openairplay/airplay2-receiver','openairplay/goplay2']){
+    const line=matrix.split('\n').find(x=>x.startsWith('| ['+name+']'));
+    assert.ok(line);
+    const cols=line.split('|').map(x=>x.trim());
+    assert.equal(cols[7],'◐');
+    assert.match(line,/sync|PTP|NTP/i);
+  }
+});

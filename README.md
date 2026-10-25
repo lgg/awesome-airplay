@@ -92,7 +92,7 @@ Licensing, pricing and availability may change. Self-hosting and hardware can ha
 - [WinPlay](https://github.com/dineshdhotrad/WinPlay) - `Open Source` `Free` · `AirPlay 2` — GPL-3.0 Windows 10/11 sender for system audio to HomePods, stereo pairs, and multiroom groups; also offers H.264 screen mirroring to Apple TV (project-reported features).
 - [pyatv](https://pyatv.dev/) - `Open Source` `Free` · `RAOP` — Python library and CLI for discovery, RAOP audio, and video-by-URL; AirPlay 2 is used for pairing and remote control, not full AirPlay 2 audio streaming.
 - [Airfoil](https://rogueamoeba.com/airfoil/mac/) - `Paid` · `AirPlay 1` — macOS audio sender using AirPlay 1 connections even with compatible AirPlay 2 receivers; synchronizes playback across multiple AirPlay, Bluetooth, Chromecast and Sonos outputs. The Windows sender was retired in 2019.
-- [AirParrot](https://www.airsquirrels.com/airparrot/) - `Paid` · `AirPlay 2` — Commercial desktop screen mirroring and media streaming app for sending to AirPlay, Google Cast, and Miracast receivers.
+- [AirParrot](https://www.airsquirrels.com/airparrot/) - `Paid` · `AirPlay 2` — Commercial Windows/macOS app for screen mirroring and media-file playback on compatible AirPlay and Google Cast receivers; AirPlay 2 destination support does not guarantee native AirPlay 2 audio transport or synchronized multiroom.
 
 ## Android
 

@@ -74,11 +74,27 @@ export function validate(readme, matrix) {
   if (source.size===0) issues.push('README parsed no resources');
   const target = new Map();
   let subSection = null, reference = false;
+  // A link row is only part of a rendered Markdown table while continuously
+  // following its header and separator. Blank lines terminate tables.
+  let tableState='outside';
   for (const [index,line] of matrix.split(/\r?\n/).entries()) {
     const h2=/^## (.+)$/.exec(line);
-    if (h2) { reference=h2[1]==='Discovery, research, and other references'; subSection=null; }
+    if (h2) { reference=h2[1]==='Discovery, research, and other references'; subSection=null; tableState='outside'; }
     const h3=/^### (.+)$/.exec(line);
-    if (h3) subSection=h3[1];
+    if (h3) { subSection=h3[1]; tableState='outside'; }
+    if (line.startsWith('| Project |') || line.startsWith('| Resource |')) {
+      if (tableState==='awaiting-separator') issues.push('Missing matrix table separator at line '+(index+1));
+      tableState='awaiting-separator';
+      continue;
+    }
+    if (tableState==='awaiting-separator') {
+      if (/^\|(?:\s*:?-{3,}:?\s*\|){3,}$/.test(line)) { tableState='rows'; continue; }
+      issues.push('Missing matrix table separator at line '+(index+1));
+      tableState='outside';
+    }
+    if (line.startsWith('| [') && tableState!=='rows')
+      issues.push('Orphan matrix resource row at line '+(index+1));
+    if (!line.startsWith('| [') && tableState==='rows') tableState='outside';
     if (!line.startsWith('| [') && /^\|.*\]\(https?:\/\//.test(line)) {
       issues.push('Malformed matrix link row at line '+(index+1));
       continue;

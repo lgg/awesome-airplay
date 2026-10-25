@@ -46,7 +46,7 @@ This companion catalog covers **every resource listed in the README**. Capabilit
 | [WinPlay](https://github.com/dineshdhotrad/WinPlay) | Windows 10/11 | AirPlay 2 (project claim) | ✓ | ✓ | — | ✓ | Upstream claims ALAC system audio, stereo groups and H.264 mirroring to Apple TV. |
 | [pyatv](https://pyatv.dev/) | Python / CLI | RAOP for audio; AirPlay 2 control | ✓ | — | ✓ | — | Video by URL, not mirroring. Pairing/control is not AirPlay 2 audio transport. |
 | [Airfoil](https://rogueamoeba.com/airfoil/mac/) | macOS 14.4+ (v5.13); Windows sender retired | AirPlay 1 streaming to compatible AirPlay 2 hardware | ✓ | — | — | ✓ | Vendor documents AirPlay 1 connections and synchronized output to multiple devices (also Bluetooth/Chromecast); not native AirPlay 2 sender transport. macOS v5.13 fixed tvOS 27/HomePod OS 27 compatibility. Windows Airfoil Satellite is receiver-only. |
-| [AirParrot](https://www.airsquirrels.com/airparrot/) | Windows / macOS | AirPlay and AirPlay 2 destinations | ✓ | ✓ | ? | ? | Mirroring/media sending; receiver compatibility does not prove AirPlay 2 multiroom. |
+| [AirParrot](https://www.airsquirrels.com/airparrot/) | Windows / macOS | AirPlay and AirPlay 2 destinations | ✓ | ✓ | ◐ | ? | Vendor documents media-file streaming to compatible AirPlay receivers as well as mirroring; standalone video support varies by destination. Simultaneous connections do not demonstrate synchronized AirPlay 2 multiroom. |
 
 ### Android apps
 
@@ -58,7 +58,6 @@ This companion catalog covers **every resource listed in the README**. Capabilit
 | [AirReceiver](https://play.google.com/store/apps/details?id=com.softmedia.receiver) | Android TV / boxes | AirPlay (version unverified) | ✓ | ✓ | ? | — | Also supports other wireless-display technologies. |
 | [ScreenDock](https://github.com/tarek369/screendock) | Android / Android TV | AirPlay (version unverified) | ✓ | ✓ | ✓ | — | Upstream documents web/YouTube AirPlay video; free music, limited Play Store mirroring/video; DRM and AirPlay 2 multiroom unavailable. |
 | [AirPlay Receiver for Android](https://github.com/jqssun/android-airplay-server) | Android 7+ / Android TV | AirPlay 2 (UxPlay legacy) | ✓ | ✓ | ◐ | — | HLS available; no DRM; UxPlay legacy restrictions apply. |
-
 | [centuryplay](https://github.com/g8row/centuryplay) | Android 11+ | AirPlay 1 (RAOP); AirPlay 2 realtime (upstream claim) | ✓ | — | — | ✓ | ALAC audio; multiroom verified upstream with Shairport Sync, while HomePod/Sonos AirPlay 2 playback is mostly expected rather than device-verified. App capture restrictions and FairPlay-only receiver limitations apply. |
 
 ### Related, non-AirPlay streaming

@@ -123,7 +123,7 @@ These README entries are not themselves general-purpose streaming senders/receiv
 
 | Resource | README section | Why it is here |
 | --- | --- | --- |
-| [Avahi](https://www.avahi.org/) | Debugging and Discovery | mDNS/Zeroconf service discovery, not a media endpoint. |
+| [Avahi](https://github.com/avahi/avahi) | Debugging and Discovery | Maintained LGPL-2.1 mDNS/DNS-SD discovery suite, not an AirPlay media endpoint. |
 | [Discovery for macOS](https://apps.apple.com/us/app/discovery-dns-sd-browser/id1381004916) | Debugging and Discovery | macOS Bonjour/DNS-SD browser, formerly Bonjour Browser. |
 | [Discovery for iPhone](https://apps.apple.com/us/app/discovery-dns-sd-browser/id305441017) | Debugging and Discovery | App Store lists this DNS-SD browser for iPhone only; the macOS version is a separate app. |
 | [Wireshark](https://www.wireshark.org/) | Debugging and Discovery | Packet analyzer for discovering AirPlay protocol issues. |

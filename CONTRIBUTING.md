@@ -50,12 +50,13 @@ This is a curated list, not a complete directory. A good entry should answer at 
 
 ## Running Checks
 
-Run both checks before submitting:
+Run all checks before submitting:
 
 ```sh
-node --test tests/check-compatibility.test.mjs
+node --test tests/*.test.mjs
 node scripts/check-compatibility.mjs
+node scripts/check-local-links.mjs
 npx --yes awesome-lint@2.3.0
 ```
 
-The compatibility check verifies matching README/matrix names and URLs against a separately committed inventory, flags duplicate URLs and unregistered or duplicate section headings, unsupported list markers, exact table headers/separators/row continuity, README contents anchors, badges and positive protocol claims. New resource sections must be added to the checker's category map. Tests cover malformed data as well as known recent entries. These checks cannot independently prove upstream feature claims, live link availability or hardware interoperability. For uncertain features, document the exact upstream claim and its limitations instead of guessing.
+The compatibility check verifies matching README/matrix names and URLs against a separately committed inventory, flags duplicate URLs and unregistered or duplicate section headings, unsupported list markers, exact table headers/separators/row continuity, README contents anchors, badges and positive protocol claims. New resource sections must be added to the checker's category map. Tests cover malformed data as well as known recent entries. The local-link check detects missing in-repository Markdown references and image files. External GitHub and website links must still be verified against their authoritative sources before PRs. These checks cannot independently prove upstream feature claims, live external link availability or hardware interoperability. For uncertain features, document the exact upstream claim and its limitations instead of guessing.

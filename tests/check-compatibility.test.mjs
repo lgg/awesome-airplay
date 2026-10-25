@@ -91,13 +91,14 @@ test('both Discovery App Store IDs are kept distinct',()=>{
 });
 
 
-test('baseline locks all 63 current resources independently from the matrix',()=>{
+test('baseline locks all approved resources independently from the matrix',()=>{
   const baseline=JSON.parse(readFileSync(new URL('./catalog-baseline.json',import.meta.url),'utf8'));
-  assert.equal(baseline.length,63);
+  assert.ok(baseline.length>0);
+  assert.equal(baseline.length,(readme.match(/^- \[[^\]]+\]\(https?:\/\/[^)]+\) - /gm)||[]).length);
   const urls=new Set(baseline.map(x=>x.url));
   const names=new Set(baseline.map(x=>x.name));
-  assert.equal(urls.size,63);
-  assert.equal(names.size,63);
+  assert.equal(urls.size,baseline.length);
+  assert.equal(names.size,baseline.length);
   assert.ok(names.has('centuryplay'));
   assert.ok(names.has('Android2Apple4Music'));
 });
@@ -153,4 +154,28 @@ test('centuryplay remains in the same uninterrupted Android matrix table',()=>{
   assert.ok(android);
   assert.match(android,/\| \[AirPlay Receiver for Android\][^\n]*\n\| \[centuryplay\]/);
   assert.deepEqual(validate(readme,matrix),[]);
+});
+
+test('asterisk bullets cannot hide new resources from the validator',()=>{
+  const fake='* [New AirPlay Receiver](https://example.com/new) - An experimental receiver.';
+  fails(readme.replace(line,line+'\n'+fake),matrix,'Unsupported README list marker');
+});
+test('plus sign bullets cannot hide new resources from the validator',()=>{
+  const fake='+ [New AirPlay Sender](https://example.com/sender) - An experimental sender.';
+  fails(readme.replace(line,line+'\n'+fake),matrix,'Unsupported README list marker');
+});
+test('negative AirPlay 2 protocol modes cannot validate a positive README badge',()=>{
+  fails(readme,matrix.replace(row,row.replace('AirPlay 1 or 2 (build-dependent)','AirPlay 2 unsupported')),'Protocol mismatch: Shairport Sync');
+  fails(readme,matrix.replace(row,row.replace('AirPlay 1 or 2 (build-dependent)','No AirPlay 2 implementation')),'Protocol mismatch: Shairport Sync');
+});
+test('negative RAOP protocol modes cannot validate a positive README badge',()=>{
+  const pyrow=matrix.split('\n').find(x=>x.startsWith('| [pyatv]'));
+  assert.ok(pyrow);
+  fails(readme,matrix.replace(pyrow,pyrow.replace('RAOP for audio; AirPlay 2 control','RAOP unsupported; AirPlay 2 control')),'Protocol mismatch: pyatv');
+});
+test('approved inventory scales with intentional new entries',()=>{
+  const catalog=JSON.parse(readFileSync(new URL('./catalog-baseline.json',import.meta.url),'utf8'));
+  assert.equal(catalog.length,new Set(catalog.map(x=>x.name)).size);
+  assert.ok(catalog.some(x=>x.name==='Android2Apple4Music'));
+  assert.ok(catalog.some(x=>x.name==='centuryplay'));
 });

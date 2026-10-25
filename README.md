@@ -77,7 +77,7 @@ Licensing, pricing and availability may change. Self-hosting and hardware can ha
 ## Screen Mirroring Receivers
 
 - [UxPlay](https://github.com/FDH2/UxPlay) - `Open Source` `Free` · `AirPlay 2 (Legacy)` — GStreamer receiver for Linux, macOS, BSD, and Windows. Supports legacy AirPlay 2 mirroring, audio, and limited YouTube HLS; not AirPlay 2 multiroom audio.
-- [RPiPlay](https://github.com/FD-/RPiPlay) - `Open Source` `Free` — Raspberry Pi-oriented AirPlay receiver for H.264 screen mirroring with accompanying AAC audio; standalone AirPlay video playback is unsupported.
+- [RPiPlay](https://github.com/FD-/RPiPlay) - `Open Source` `Free` — Legacy Raspberry Pi AirPlay H.264 mirroring receiver with AAC audio, built around older Raspbian/OpenMAX components; modern Raspberry Pi OS and newer Pi hardware need separate compatibility checks. Standalone AirPlay video is unsupported.
 - [java-airplay-server](https://github.com/serezhka/java-airplay-server) - `Open Source` `Free` · `AirPlay 2` — Java AirPlay server that acts like an Apple TV for mirroring experiments.
 - [airplayreceiver](https://github.com/SteeBono/airplayreceiver) - `Open Source` `Free` · `AirPlay 2` — C# implementation of AirPlay 2 mirroring and audio protocol for testing across Windows, macOS, and Linux.
 - [AirPlay-Windows](https://github.com/moieric11/AirPlay-Windows) - `Open Source` `Free` · `AirPlay 2` — GPL-3.0 Windows receiver for H.264/HEVC mirroring and RAOP audio, with experimental opt-in HLS playback; no Bonjour SDK required.
@@ -87,7 +87,7 @@ Licensing, pricing and availability may change. Self-hosting and hardware can ha
 ## Senders and Desktop Clients
 
 - [TuneBlade](https://www.tuneblade.com/) - `Freemium` — Windows tray utility for streaming system-wide audio to AirPlay receivers, including Apple TV, AirPort Express, AirPlay speakers, and Shairport-based receivers.
-- [AirSend](https://github.com/Pabldi08/AirSend) - `Open Source` `Free` · `AirPlay 2` — Open-source Windows to HomePod AirPlay 2 audio sender written with Rust and Tauri.
+- [AirSend](https://github.com/Pabldi08/AirSend) - `Open Source` `Free` · `AirPlay 2` — Pre-alpha Rust/Tauri Windows sender for HomePod AirPlay 2 audio; the released version has limited hardware validation, and synchronized multi-speaker playback is not yet established.
 - [OwnTone](https://owntone.github.io/owntone-server/) - `Open Source` `Free` · `AirPlay 2` — Headless media server and AirPlay 1/2 sender for Linux, FreeBSD, and macOS; plays local files, Spotify, and internet radio to speakers with multiroom support.
 - [WinPlay](https://github.com/dineshdhotrad/WinPlay) - `Open Source` `Free` · `AirPlay 2` — GPL-3.0 Windows 10/11 sender for system audio to HomePods, stereo pairs, and multiroom groups; also offers H.264 screen mirroring to Apple TV (project-reported features).
 - [pyatv](https://pyatv.dev/) - `Open Source` `Free` · `RAOP` — Python library and CLI for discovery, RAOP audio, and video-by-URL; AirPlay 2 is used for pairing and remote control, not full AirPlay 2 audio streaming.
@@ -137,7 +137,7 @@ Licensing, pricing and availability may change. Self-hosting and hardware can ha
 - [java-airplay-lib](https://github.com/serezhka/java-airplay-lib) - `Open Source` `Free` · `AirPlay 2` — Java library for creating AirPlay 2 servers that behave like Apple TV.
 - [node-appletv](https://github.com/evandcoleman/node-appletv) - `Open Source` `Free` — Node.js library for controlling Apple TV devices over local network protocols. Remote control only; no AirPlay audio or video streaming.
 - [AirPlay SDK](https://github.com/xfirefly/Airplay-SDK) - `Paid` — Commercial Android and Windows AirPlay receiver SDK and sample binaries; source-code licensing is offered for sale.
-- [apsdk-public](https://github.com/air-display/apsdk-public) - `Open Source` `Free` — C++ AirPlay server implementation for receiver development and protocol reference.
+- [apsdk-public](https://github.com/air-display/apsdk-public) - `Open Source` `Free` — GPL-2.0 cross-platform C++ AirPlay receiver SDK with mirroring and video code; its required FairPlay submodule is private, so a public-source build cannot provide a working receiver on its own.
 
 ## Debugging and Discovery
 

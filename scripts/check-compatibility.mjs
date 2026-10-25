@@ -36,6 +36,10 @@ export function validate(readme, matrix) {
   for (const [index,line] of readme.split(/\r?\n/).entries()) {
     const h = /^## (.+)$/.exec(line);
     if (h) section = h[1];
+    if (/^[*+] \[[^\]]+\]\(https?:\/\//.test(line)) {
+      issues.push('Unsupported README list marker at line '+(index+1));
+      continue;
+    }
     if (!line.startsWith('- ')) continue;
     const isKnownSection=groupMap.has(section) || referenceGroups.has(section);
     // Any external Markdown list link is a catalog resource, even under a new heading.
@@ -129,12 +133,14 @@ export function validate(readme, matrix) {
       if(match.section!==v.section) issues.push('Section mismatch: '+name);
       if(v.protocol) {
         const mode=match.mode||'';
-        const supportsAirPlay2=/AirPlay\s*(?:2|1\s*(?:\/|or)\s*2)/i.test(mode);
-        const supportsAirPlay1=/AirPlay\s*1/i.test(mode)||/RAOP|AirTunes/i.test(mode);
+        const deniesAirPlay2=/(?:\b(?:no|without|unsupported|unverified)\s+AirPlay\s*2\b|\bAirPlay\s*2\s+(?:unsupported|not supported|unverified)\b)/i.test(mode);
+        const deniesRAOP=/(?:\b(?:no|without|unsupported|unverified)\s+RAOP\b|\bRAOP\s+(?:unsupported|not supported|unverified)\b)/i.test(mode);
+        const supportsAirPlay2=/AirPlay\s*(?:2|1\s*(?:\/|or)\s*2)/i.test(mode) && !deniesAirPlay2;
+        const supportsAirPlay1=(/AirPlay\s*1/i.test(mode)||/RAOP|AirTunes/i.test(mode)) && !deniesRAOP;
         if(v.protocol==='AirPlay 2' && !supportsAirPlay2) issues.push('Protocol mismatch: '+name);
-        if(v.protocol==='AirPlay 2 (Legacy)' && !/AirPlay\s*2/i.test(mode)) issues.push('Protocol mismatch: '+name);
+        if(v.protocol==='AirPlay 2 (Legacy)' && !supportsAirPlay2) issues.push('Protocol mismatch: '+name);
         if(v.protocol==='AirPlay 1' && !supportsAirPlay1) issues.push('Protocol mismatch: '+name);
-        if(v.protocol==='RAOP' && !/RAOP/i.test(mode)) issues.push('Protocol mismatch: '+name);
+        if(v.protocol==='RAOP' && (!/RAOP/i.test(mode)||deniesRAOP)) issues.push('Protocol mismatch: '+name);
         if(v.protocol==='Custom Protocol' && !/not AirPlay|AriaCast|custom protocol/i.test(mode)) issues.push('Protocol mismatch: '+name);
       }
     }

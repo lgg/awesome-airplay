@@ -29,7 +29,7 @@ This companion catalog covers **every resource listed in the README**. Capabilit
 | Project | Platform | Protocol / mode | Audio | Mirroring | Video | Multiroom | Notes |
 | --- | --- | --- | :---: | :---: | :---: | :---: | --- |
 | [UxPlay](https://github.com/FDH2/UxPlay) | Linux / macOS / BSD / Windows | AirPlay 2 (legacy) | ✓ | ✓ | ◐ | — | YouTube HLS only; no AirPlay 2 multiroom audio. |
-| [RPiPlay](https://github.com/FD-/RPiPlay) | Raspberry Pi / other | AirPlay (version unverified) | ✓ | ✓ | — | — | Receives AAC audio with mirrored H.264 screen; standalone video-by-URL playback not implemented. |
+| [RPiPlay](https://github.com/FD-/RPiPlay) | Raspberry Pi / older Raspbian; desktop GStreamer builds | Legacy AirPlay mirroring | ✓ | ✓ | — | — | Upstream's Pi build guidance targets Raspbian Stretch/Buster and Broadcom OpenMAX/ilclient. Modern Pi OS and Pi 5 compatibility are not established; mirrored AAC/H.264 work on legacy setups, but standalone video-by-URL is not implemented. |
 | [java-airplay-server](https://github.com/serezhka/java-airplay-server) | Java / cross-platform | AirPlay 2 (project claim) | ✓ | ✓ | ? | — | Emulates an Apple TV for development and mirroring. |
 | [airplayreceiver](https://github.com/SteeBono/airplayreceiver) | C# / cross-platform | AirPlay 2 (project claim) | ✓ | ✓ | ? | — | Experimental AirPlay 2 mirroring and audio. |
 | [AirPlay-Windows](https://github.com/moieric11/AirPlay-Windows) | Windows 10/11 x64 | AirPlay 2 mirroring, RAOP audio | ✓ | ✓ | ◐ | — | Standalone HLS is experimental and opt-in with `--hls-proxy-playback`; protected/DRM media unsupported. Audio uses RAOP AAC/ALAC. |
@@ -41,7 +41,7 @@ This companion catalog covers **every resource listed in the README**. Capabilit
 | Project | Platform | Protocol / mode | Audio | Mirroring | Video | Multiroom | Notes |
 | --- | --- | --- | :---: | :---: | :---: | :---: | --- |
 | [TuneBlade](https://www.tuneblade.com/) | Windows | AirPlay (version unverified) | ✓ | — | — | ? | System-wide audio sender; trial/free version may have restrictions. |
-| [AirSend](https://github.com/Pabldi08/AirSend) | Windows | AirPlay 2 (project claim) | ✓ | — | — | ? | HomePod-oriented sender. |
+| [AirSend](https://github.com/Pabldi08/AirSend) | Windows | AirPlay 2 (pre-alpha sender) | ✓ | — | — | — | Released 0.1.7 tested in one HomePod 2nd-gen setup; other receiver types remain unverified. Multi-device streaming is experimental and does not synchronize receiver clocks; proposed group support is not in the published release. |
 | [OwnTone](https://owntone.github.io/owntone-server/) | Linux / FreeBSD / macOS | AirPlay 1 / 2 | ✓ | — | — | ✓ | Media server **sending** to AirPlay 1/2 speakers; supports synchronized multiroom playback. |
 | [WinPlay](https://github.com/dineshdhotrad/WinPlay) | Windows 10/11 | AirPlay 2 (project claim) | ✓ | ✓ | — | ✓ | Upstream claims ALAC system audio, stereo groups and H.264 mirroring to Apple TV. |
 | [pyatv](https://pyatv.dev/) | Python / CLI | RAOP for audio; AirPlay 2 control | ✓ | — | ✓ | — | Video by URL, not mirroring. Pairing/control is not AirPlay 2 audio transport. |
@@ -105,7 +105,7 @@ This companion catalog covers **every resource listed in the README**. Capabilit
 | [java-airplay-lib](https://github.com/serezhka/java-airplay-lib) | Java / cross-platform | AirPlay 2 (project claim) | ✓ | ✓ | ? | — | Library for building receivers; not a ready-to-run app. |
 | [node-appletv](https://github.com/evandcoleman/node-appletv) | Node.js | Apple TV control (not streaming) | — | — | — | — | Media Remote Protocol and control operations. |
 | [AirPlay SDK](https://github.com/xfirefly/Airplay-SDK) | Android / Windows SDK | AirPlay (version unverified) | ✓ | ✓ | ? | ? | Commercial SDK; licensing determines source availability. |
-| [apsdk-public](https://github.com/air-display/apsdk-public) | C++ / cross-platform | AirPlay (version unverified) | — | ✓ | ? | — | Video-oriented implementation; verify exact media modes upstream. |
+| [apsdk-public](https://github.com/air-display/apsdk-public) | C++ / Windows, macOS, Linux, Android, iOS | AirPlay receiver (version unverified) | ? | ◐ | ◐ | — | Upstream advertises screen mirroring and standalone video, but the required FairPlay submodule is private. A build without it compiles but is nonfunctional; do not treat this as a complete public-source receiver. |
 
 ### Historical implementations
 

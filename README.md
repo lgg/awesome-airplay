@@ -128,8 +128,8 @@ Licensing, pricing and availability may change. Self-hosting and hardware can ha
 ## Linux Audio Stack
 
 - [PipeWire RAOP Sink](https://man.archlinux.org/man/extra/pipewire-zeroconf/libpipewire-module-raop-sink.7.en) - `Open Source` `Free` · `AirPlay 1` — PipeWire module for streaming Linux audio to AirPlay devices.
-- [PipeWire RAOP Discover](https://docs.pipewire.org/page_module_raop_discover.html) - `Open Source` `Free` · `AirPlay 1` — PipeWire module that discovers AirPlay/RAOP receivers on Linux; discovery itself is not an audio streaming implementation.
-- [PipeWire AirPlay Toggle](https://extensions.gnome.org/extension/7652/pipewire-airplay-toggle/) - `Open Source` `Free` · `AirPlay 1` — GNOME Shell 45–50 extension for toggling PipeWire/RAOP discovery (also PulseAudio since version 8), not a standalone audio sender.
+- [PipeWire RAOP Discover](https://docs.pipewire.org/page_module_raop_discover.html) - `Open Source` `Free` — PipeWire Zeroconf discovery module that finds AirPlay/RAOP devices and automatically creates RAOP sinks using the separate streaming module.
+- [PipeWire AirPlay Toggle](https://extensions.gnome.org/extension/7652/pipewire-airplay-toggle/) - `Open Source` `Free` — GNOME Shell 45–50 quick-settings toggle for enabling or disabling RAOP device discovery in PipeWire (and PulseAudio since extension version 8); it does not implement AirPlay transport.
 - [PulseAudio RAOP Modules](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#module-raop-discover) - `Open Source` `Free` · `AirPlay 1` — PulseAudio modules for discovering and sending audio to RAOP and AirPlay devices.
 
 ## Libraries and Protocol Implementations

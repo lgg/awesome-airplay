@@ -94,8 +94,8 @@ This companion catalog covers **every resource listed in the README**. Capabilit
 | Project | Platform | Protocol / mode | Audio | Mirroring | Video | Multiroom | Notes |
 | --- | --- | --- | :---: | :---: | :---: | :---: | --- |
 | [PipeWire RAOP Sink](https://man.archlinux.org/man/extra/pipewire-zeroconf/libpipewire-module-raop-sink.7.en) | Linux / PipeWire | AirPlay 1 / RAOP | ✓ | — | — | — | Linux module that sends RAOP audio. |
-| [PipeWire RAOP Discover](https://docs.pipewire.org/page_module_raop_discover.html) | Linux / PipeWire | RAOP discovery | — | — | — | — | Discovery component only, no audio by itself. |
-| [PipeWire AirPlay Toggle](https://extensions.gnome.org/extension/7652/pipewire-airplay-toggle/) | Linux / GNOME 45–50 | RAOP discovery controls | — | — | — | — | Controls PipeWire RAOP discovery; PulseAudio available since extension v8. A UI toggle rather than its own sender. |
+| [PipeWire RAOP Discover](https://docs.pipewire.org/page_module_raop_discover.html) | Linux / PipeWire | RAOP discovery (loads RAOP sink) | — | — | — | — | Discovers Zeroconf services and creates the separate libpipewire-module-raop-sink for each matching receiver; this module alone is not an audio transport implementation. |
+| [PipeWire AirPlay Toggle](https://extensions.gnome.org/extension/7652/pipewire-airplay-toggle/) | Linux / GNOME 45–50 | RAOP discovery controls (not transport) | — | — | — | — | Quick-settings UI for toggling RAOP device discovery; PulseAudio supported since extension v8. Provides no AirPlay audio transmission itself. |
 | [PulseAudio RAOP Modules](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#module-raop-discover) | Linux / PulseAudio | AirPlay 1 / RAOP | ✓ | — | — | — | RAOP sink and discovery modules. |
 
 ### Libraries and protocol implementations

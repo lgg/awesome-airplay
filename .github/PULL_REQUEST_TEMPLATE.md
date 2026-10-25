@@ -15,8 +15,9 @@
 - [ ] The link is reachable, uses HTTPS, is canonical and is not already present under another name; upstream README, license and app-store platform limits were checked.
 - [ ] The description explains why the resource is useful.
 - [ ] The description is concise, neutral, and ends with a period.
+- [ ] README section headings match the contents links, and matrix table headers/column alignment are intact.
 - [ ] Commercial, experimental, pre-alpha, historical, and incomplete-runtime/build status is clear when relevant.
-- [ ] README labels are compact (up to three: license, pricing and one verified protocol; no separate feature badges).
+- [ ] README labels are compact (up to three: license, pricing and one verified protocol; no protocol badge on discovery-only or UI-toggle utilities).
 - [ ] `Open Source` is backed by a license; trial-only products are not mislabeled `Freemium`.
 - [ ] I updated `COMPATIBILITY.md` for added/removed/renamed entries, URLs or capability changes (or confirmed none changed), keeping table rows uninterrupted by blank lines.
 - [ ] For any intentional inventory/URL/category changes, I also updated `tests/catalog-baseline.json` (not required for capability-only changes).

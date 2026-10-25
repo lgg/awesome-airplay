@@ -122,3 +122,35 @@ test('misclassified resource in both documents cannot bypass baseline',()=>{
   const matrixWrong=matrix.replace(row+'\n','').replace('### Screen mirroring receivers\n','### Screen mirroring receivers\n\n'+row+'\n');
   fails(readmeWrong,matrixWrong,'Baseline section mismatch: Shairport Sync');
 });
+
+test('matrix rejects rows separated from their Markdown table by a blank line',()=>{
+  const century=matrix.split('\n').find(x=>x.startsWith('| [centuryplay]'));
+  assert.ok(century);
+  fails(readme,matrix.replace(century,'\n'+century),'Orphan matrix resource row');
+});
+test('matrix rejects table rows without their header separator',()=>{
+  const separator='| --- | --- | --- | :---: | :---: | :---: | :---: | --- |';
+  const header='| Project | Platform | Protocol / mode | Audio | Mirroring | Video | Multiroom | Notes |';
+  const section=matrix.indexOf('### Android apps');
+  assert.ok(section>=0);
+  const before=matrix.slice(0,section),after=matrix.slice(section);
+  const altered=after.replace(header+'\n'+separator+'\n',header+'\n');
+  assert.notEqual(altered,after);
+  fails(readme,before+altered,'Missing matrix table separator');
+  fails(readme,before+altered,'Orphan matrix resource row');
+});
+test('matrix rejects table rows missing their header',()=>{
+  const header='| Project | Platform | Protocol / mode | Audio | Mirroring | Video | Multiroom | Notes |';
+  const separator='| --- | --- | --- | :---: | :---: | :---: | :---: | --- |';
+  const section=matrix.indexOf('### Android apps');
+  const after=matrix.slice(section);
+  const altered=after.replace(header+'\n'+separator+'\n','');
+  assert.notEqual(altered,after);
+  fails(readme,matrix.slice(0,section)+altered,'Orphan matrix resource row');
+});
+test('centuryplay remains in the same uninterrupted Android matrix table',()=>{
+  const android=matrix.split('### Android apps\n')[1]?.split('\n### ')[0];
+  assert.ok(android);
+  assert.match(android,/\| \[AirPlay Receiver for Android\][^\n]*\n\| \[centuryplay\]/);
+  assert.deepEqual(validate(readme,matrix),[]);
+});

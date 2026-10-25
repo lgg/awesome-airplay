@@ -5,7 +5,7 @@ Thanks for helping improve Awesome AirPlay.
 ## Guidelines
 
 - Make sure the item is directly related to AirPlay, RAOP, AirPlay 2, AirPlay-compatible receivers, senders, bridges, debugging, or defensive security research.
-- Prefer projects that are maintained, documented, and useful to someone building or troubleshooting an AirPlay setup.
+- Prefer projects that are maintained, documented, and useful to someone building or troubleshooting an AirPlay setup. Clearly disclose pre-alpha status, missing proprietary runtime components, and unsupported current hardware/OS combinations.
 - Add one link per pull request when possible.
 - **Update [COMPATIBILITY.md](COMPATIBILITY.md) in the same PR** whenever a README entry is added, removed, renamed, or its URL/capabilities change. Keep its Markdown tables contiguous: a blank line inside a table makes following resource rows render outside it.
 - For intentional resource additions, removals, renames, URL or category changes, also update the reviewed [catalog inventory](tests/catalog-baseline.json). This third snapshot prevents identical accidental deletions in README and matrix from passing CI. Do not edit it for descriptions or capability-only corrections.
@@ -58,4 +58,4 @@ node scripts/check-compatibility.mjs
 npx --yes awesome-lint@2.3.0
 ```
 
-The compatibility check verifies matching README/matrix names and URLs against a separately committed inventory, flags duplicate URLs and unregistered resource sections, checks table headers/separators/row continuity, badges and protocol claims. New resource sections must be added to the checker's category map. Tests cover malformed data as well as known recent entries. These checks cannot independently prove upstream feature claims, live link availability or hardware interoperability. For uncertain features, document the exact upstream claim and its limitations instead of guessing.
+The compatibility check verifies matching README/matrix names and URLs against a separately committed inventory, flags duplicate URLs and unregistered resource sections or unsupported list markers, checks table headers/separators/row continuity, badges and positive protocol claims. New resource sections must be added to the checker's category map. Tests cover malformed data as well as known recent entries. These checks cannot independently prove upstream feature claims, live link availability or hardware interoperability. For uncertain features, document the exact upstream claim and its limitations instead of guessing.

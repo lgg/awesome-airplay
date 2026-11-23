@@ -10,6 +10,11 @@
     "section": "Bridges and Multiroom"
   },
   {
+    "name": "AirFlash",
+    "url": "https://github.com/Ding-Kyoma/AirFlash",
+    "section": "Senders and Desktop Clients"
+  },
+  {
     "name": "Airfoil",
     "url": "https://rogueamoeba.com/airfoil/mac/",
     "section": "Senders and Desktop Clients"
@@ -33,6 +38,11 @@
     "name": "AirPin PRO",
     "url": "https://play.google.com/store/apps/details?id=com.waxrain.airplaydmr3",
     "section": "Android"
+  },
+  {
+    "name": "AirPlay Bridge",
+    "url": "https://github.com/RiverFlowsInUUU/AirPlay-Bridge",
+    "section": "Senders and Desktop Clients"
   },
   {
     "name": "AirPlay Receiver for Android",
@@ -170,6 +180,11 @@
     "section": "Protocol Notes"
   },
   {
+    "name": "HomePodCast",
+    "url": "https://github.com/qiyinxi/HomePodCast",
+    "section": "Senders and Desktop Clients"
+  },
+  {
     "name": "java-airplay-lib",
     "url": "https://github.com/serezhka/java-airplay-lib",
     "section": "Libraries and Protocol Implementations"
@@ -305,8 +320,18 @@
     "section": "Screen Mirroring Receivers"
   },
   {
+    "name": "WinAirPlay",
+    "url": "https://github.com/Tjiba/WinAirPlay",
+    "section": "Senders and Desktop Clients"
+  },
+  {
     "name": "WinPlay",
     "url": "https://github.com/dineshdhotrad/WinPlay",
+    "section": "Senders and Desktop Clients"
+  },
+  {
+    "name": "WinPods",
+    "url": "https://github.com/sheepy928/WinPods",
     "section": "Senders and Desktop Clients"
   },
   {
